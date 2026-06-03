@@ -17,7 +17,7 @@ One row per county per presidential election — **254 counties × 7 elections**
 ## Case C — National Supported Work (NSW) Demonstration
 The classic **randomized job-training experiment** (mid-1970s): disadvantaged workers randomly assigned to subsidized employment or control, with earnings before and after. We use it for the **workforce-training** case — the experiment, the famous selection-bias contrast, regression/matching, and cost-benefit.
 
-- **Data (free, no registration):** the Dehejia–Wahba public extract — [users.nber.org/~rdehejia/data](https://users.nber.org/~rdehejia/data/nswdata2.html). A compact flat file (treatment status, demographics, earnings 1974/75/78) that opens directly in Excel.
+- **Download (in this repo):** [`NSW_experimental.xlsx`]({{ '/data/NSW_experimental.xlsx' | relative_url }}) (445 rows — the randomized sample) · [CSV]({{ '/data/NSW_experimental.csv' | relative_url }}) · [`NSW_observational_cps.csv`]({{ '/data/NSW_observational_cps.csv' | relative_url }}) (program group + a non-experimental CPS comparison, for the selection-bias exercise) · [codebook]({{ '/data/NSW_codebook.md' | relative_url }}). Source: the Dehejia–Wahba public extract — [users.nber.org/~rdehejia/data](https://users.nber.org/~rdehejia/data/nswdata2.html).
 - **Key real numbers:** experimental effect **+$1,794** (treated $6,349 vs. control $4,555); the naive observational comparison gives **−$8,498** (LaLonde 1986; Dehejia & Wahba 1999).
 
 ## Case D — Moving to Opportunity (MTO)
