@@ -14,39 +14,46 @@ permalink: /docs/chapter4/
 > "The measure of a thing is never the thing itself."
 > — paraphrase commonly used in measurement theory; treat it as a maxim, not a citation
 
-## Opening Case: The Workforce Training "Completion Rate" in Central Texas
+## Opening Case: Measuring "Workforce Success" in the National Supported Work Demonstration
 
-A workforce board serving Hays, Caldwell, and Comal counties runs a tuition-assistance program that pays for short-term credentials — commercial driver's licenses, welding certificates, certified nursing assistant coursework. The board's annual report to the state proudly lists a 91 percent "completion rate," and the executive director wants that number to anchor a request for expanded funding. Your evaluation team has been asked to verify it before the figure goes into a legislative briefing.
+In the mid-1970s, the National Supported Work (NSW) Demonstration randomly assigned hard-to-employ applicants — long-term welfare recipients, ex-offenders, former drug users, school dropouts — to a subsidized work-experience program or to a control group that received nothing. Because assignment was random, the evaluation had the cleanest possible design. But a clean design still has to decide *what to count*. What, precisely, is "workforce success," and where do the numbers come from?
 
-Within an afternoon of looking at the underlying records, the clean story dissolves. Some training providers report "completion" when a student finishes coursework; others report it only when the student passes the licensing exam; one community-college partner counts anyone who attended past the refund-deadline date. The denominator is murkier still: students who withdrew in the first two weeks were quietly dropped from the file before the rate was computed. And the field that is supposed to record credential attainment is blank for roughly a fifth of enrollees, because that information arrives from a separate state database on a lag.
+The NSW evaluators settled on **earnings** as the headline outcome, measured in 1978 (after the program), with **employment status** as a secondary indicator. Those choices look obvious until you ask how earnings are actually recorded. Self-reported earnings on a follow-up survey are subject to recall error and attrition; earnings drawn from administrative Unemployment Insurance (UI) wage records are more consistent but miss off-the-books work, cash jobs, and out-of-state employment that never reaches a state's UI file. The same person can have two different "earnings" depending on which source you trust.
 
-The 91 percent is not a lie, exactly. It is the predictable result of stitching together administrative records that were built to run a program, not to evaluate it. Before this evaluation can say anything about whether the program *works*, it has to settle a more basic question: what, precisely, are we measuring, and how much can we trust the numbers we have?
+The payoff of getting measurement right is enormous here, because NSW became the most famous test case in evaluation. Comparing the randomized treatment and control groups, treated workers earned **\$6,349** in 1978 versus **\$4,555** for controls — an experimental effect of **+\$1,794** (LaLonde 1986; Dehejia & Wahba 1999). Yet when LaLonde discarded the randomized controls and instead compared the trainees to a non-experimental comparison group drawn from national survey data, the same program appeared to *lower* earnings by roughly **\$8,498**. Same outcome concept, same trainees, opposite conclusion — because the *comparison* and the *measurement* changed. Before any evaluation can say whether a program works, it has to settle a more basic question: what, precisely, are we measuring, and how much can we trust the numbers we have?
 
 **Guiding Questions**
 
-- How do we move from an abstract concept ("training success") to a specific, defensible indicator we can put in a spreadsheet column?
+- How do we move from an abstract concept ("workforce success") to a specific, defensible indicator we can put in a spreadsheet column?
 - What makes a measure valid and reliable, and how would we know if ours is neither?
-- When evaluation rides on administrative data we did not collect, what can go wrong — and how do we check for it before we trust it?
+- When evaluation rides on administrative data we did not collect — like UI wage records — what can go wrong, and how do we check for it before we trust it?
 
 ## Why This Chapter Matters
 
 Every method in the rest of this course — group comparisons, regression, difference-in-differences — assumes you have already done the unglamorous work of this chapter well. A flawless statistical analysis of a badly measured outcome produces a precise, confident, wrong answer. In public administration this is not a hypothetical risk: most evaluations run on data that some agency generated for compliance, billing, or case management, then handed to you for a purpose it was never designed to serve. Learning to interrogate a measure before you analyze it is the difference between an evaluator and a calculator.
 
+This book returns throughout to four real evaluation settings, and each one forces a measurement choice:
+
+- **Case A — Texas economic-development sales tax.** Cities adopt a Type A or Type B local sales tax to fund economic development. The administrative outcomes come from the Comptroller's records: **per-capita sales-tax allocation**, **taxable sales**, and the count of **business outlets** in a city.
+- **Case B — Texas countywide vote centers.** Counties adopt vote centers (vote-anywhere polling places) in place of precinct voting. The outcome is **turnout**, operationalized as votes cast divided by voting-age population, from county canvass records.
+- **Case C — National Supported Work (NSW).** The job-training RCT of the opening case. Outcomes are **1978 earnings** and **employment**, drawn from surveys and UI wage records (LaLonde 1986; Dehejia & Wahba 1999).
+- **Case D — Moving to Opportunity (MTO).** HUD randomly assigned families in five cities to housing vouchers that required a move to a low-poverty neighborhood. Outcomes include **neighborhood poverty rate** (the proximate, administratively measured outcome) and children's later **adult earnings** from tax records (Chetty, Hendren & Katz 2016).
+
 ## From Concepts to Indicators: Operationalization
 
 Evaluation questions arrive as concepts — *success*, *need*, *equity*, *fiscal stress*. None of these can be entered into a cell. **Operationalization** is the process of specifying the concrete, observable indicator that will stand in for the concept in your analysis. It is a series of choices, and each choice should be defended in writing.
 
-Consider "voter engagement" in our Texas county panel. We cannot measure engagement directly, so we operationalize it as **turnout**, defined as ballots cast divided by some population base. But which base? Voting-age population, registered voters, or citizen voting-age population each yields a different denominator and a different number. A program that appears to boost turnout under one definition can appear to do nothing under another. The concept did not change; the operational definition did.
+Consider "voter engagement" in the Texas county vote-center evaluation (Case B). We cannot measure engagement directly, so we operationalize it as **turnout**, defined as ballots cast divided by some population base. But which base? Voting-age population, registered voters, or citizen voting-age population each yields a different denominator and a different number. The Case B panel uses votes divided by voting-age population — across all 254 counties in 2020 that yields a mean turnout of about 0.57 — but a program that appears to boost turnout under one denominator can appear to do nothing under another. The concept did not change; the operational definition did.
 
 > **Briefing:** Operationalization is not a technicality you settle once. The choice of denominator, time window, and inclusion rule can move your headline number more than the program ever did.
 
-A useful discipline is to write, for every outcome in your evaluation, a one-sentence operational definition that another analyst could follow to reproduce your column exactly. "Completion" in the opening case fails this test; "passed the state licensing exam within 180 days of course end, among enrollees who attended past the refund deadline" passes it.
+A useful discipline is to write, for every outcome in your evaluation, a one-sentence operational definition that another analyst could follow to reproduce your column exactly. "Workforce success" in the NSW opening case fails this test until it is pinned down; "total individual earnings in calendar year 1978, in nominal dollars, from the follow-up records" passes it — and is exactly the definition behind the \$6,349-versus-\$4,555 contrast.
 
 ## Validity and Reliability of Measures
 
 Two properties separate a usable indicator from a misleading one.
 
-**Construct validity** asks whether the indicator actually captures the concept it claims to. A high completion rate has poor construct validity for "workforce success" if completion is recorded before anyone gets a job. **Reliability** asks whether the indicator is consistent — whether the same case measured twice, or by two providers, yields the same value. The opening case has a reliability problem: three providers apply three different rules to the same word.
+**Construct validity** asks whether the indicator actually captures the concept it claims to. In NSW (Case C), 1978 earnings have strong construct validity for "workforce success" because earnings are exactly what a job program is meant to raise; a measure like "hours of class attended" would have weaker validity, since attendance is not the goal. In MTO (Case D), the *neighborhood poverty rate* a family lands in has good validity for "did the voucher change their environment," but it is only a proxy for the deeper concept — whether the move improved children's life chances — which is why Chetty, Hendren and Katz (2016) ultimately measured children's adult earnings. **Reliability** asks whether the indicator is consistent — whether the same case measured twice, or from two sources, yields the same value. NSW earnings have a reliability question precisely here: survey self-reports and UI wage records can disagree for the same worker.
 
 The two are distinct. A bathroom scale that always reads three pounds high is perfectly reliable and invalid. A measure can be reliable without being valid, but it cannot be valid without being reliable — noise in the indicator caps how well it can track the concept (Shadish, Cook & Campbell 2002).
 
@@ -81,7 +88,7 @@ Most outcomes in our county and city panels are ratio-level, which is convenient
 
 A good outcome measure for an evaluation is **valid, reliable, sensitive to the program, available over the relevant period, and consistently defined across the units you compare**. The last two criteria are where administrative data most often fail.
 
-Sensitivity matters because a program can only move an outcome that is close enough downstream to be affected within your study window. A job-training program might plausibly affect credential attainment within six months, employment within a year, and earnings within two — but lifetime earnings will not budge during a one-year evaluation, no matter how good the program is. Picking an outcome the program cannot move guarantees a null result that says nothing about the program.
+Sensitivity matters because a program can only move an outcome that is close enough downstream to be affected within your study window. NSW (Case C) measured earnings in 1978, a year chosen to be late enough for the work experience to show up in the labor market; measured too early, the program would look like a failure simply because its effects had not yet arrived. The same logic shapes MTO (Case D): the *neighborhood poverty rate* a family moved into changes immediately, but the effect on children's adult earnings took two decades to observe and was visible mainly for children who moved young (Chetty, Hendren & Katz 2016). Picking an outcome the program cannot move within your window guarantees a null result that says nothing about the program.
 
 ## Administrative Data: Strengths and Pitfalls
 
@@ -89,40 +96,40 @@ Administrative data — records generated by the routine operation of a program 
 
 But they were collected to *run* the program, not to evaluate it, and that origin creates four recurring hazards.
 
-**Coverage.** Who is *in* the data? The workforce file dropped early withdrawals before computing the rate; our city finance panel covers cities that levy a local sales tax and report to the Comptroller, which is not the same as "all Texas municipalities." Units missing from the file are invisible to your analysis and can bias it badly if their absence is related to the outcome.
+**Coverage.** Who is *in* the data? NSW earnings drawn from a single state's UI file miss workers who moved out of state or worked off the books, so the file undercounts exactly the harder-to-track workers an evaluation cares about. In Case A, the sales-tax allocation file covers the roughly 1,141 Texas cities that levy a local sales tax and report to the Comptroller, which is not the same as "all Texas municipalities." Units missing from the file are invisible to your analysis and can bias it badly if their absence is related to the outcome.
 
 **Definitional changes.** Administrative definitions change with statute, software, and staff. A poverty threshold is revised; a "case closure" reason gets a new code; the Census changes how it tabulates race. A jump in a time series may be a policy effect — or a redefinition. Always check whether a break in the data lines up with a known administrative change before you interpret it as a program effect.
 
 > **Briefing:** Before treating any change over time as a finding, ask whether the *measurement* changed. Many "effects" in administrative time series are artifacts of redefinition.
 
-**Missingness.** Records are blank for reasons that are rarely random. In the opening case, credential attainment was missing precisely for the most recent enrollees, because of reporting lag — so dropping missing rows would systematically exclude the newest cohort. Missingness that depends on the outcome is the dangerous kind.
+**Missingness.** Records are blank for reasons that are rarely random. In a UI-based earnings file like NSW's, earnings are "missing" (recorded as zero) not only for the truly unemployed but also for anyone who left the state or took unreported work — so dropping or zeroing those rows would systematically misstate the program's effect. Missingness that depends on the outcome is the dangerous kind.
 
-**Error.** Free-text fields, fat-fingered entries, duplicate records, and impossible values (a city with negative sales-tax revenue, a turnout rate of 140 percent) are endemic. These are not rare edge cases; in a panel of 1,180 cities over twelve years you should *expect* them and screen for them.
+**Error.** Free-text fields, fat-fingered entries, duplicate records, and impossible values (a city with negative sales-tax revenue, a turnout rate above 100 percent) are endemic. These are not rare edge cases; in a panel of roughly 1,141 Texas cities tracked over many years you should *expect* them and screen for them.
 
 ## Data Quality and Cleaning
 
 Cleaning is not a chore that precedes the "real" analysis; it is part of the analysis, and it should be documented so a skeptic can retrace it. A disciplined first pass screens every variable for range, missingness, duplicates, and definitional consistency before a single statistic is computed.
 
-### Worked Example: Screening the City Finance Panel in Excel
+### Worked Example: Screening the Texas Sales-Tax Allocation File in Excel
 
-Suppose you have the Texas city finance panel open, with one row per city-year and columns including `city`, `year`, and `sales_tax_rev`. You want to screen `sales_tax_rev` for quality before using it.
+Suppose you have the Case A file open, with one row per city for 2024 and columns including `city`, `population`, and `alloc_per_capita` (the city's 2024 economic-development sales-tax allocation per resident). Across the roughly 1,141 reporting cities this variable has a mean of about \$395 and a median of about \$276 — figures we will describe properly in Chapter 5. First, screen `alloc_per_capita` for quality.
 
-**1. Range and impossible values.** Find the extremes with `=MIN(D2:D14162)` and `=MAX(D2:D14162)`. A negative minimum is impossible for revenue and flags an error. Count suspicious zeros with `=COUNTIF(D2:D14162,0)` — a true zero (no sales tax) is plausible for some cities but a sudden zero in one year of an otherwise-reporting city is likely missing data miscoded.
+**1. Range and impossible values.** Find the extremes with `=MIN(D2:D1142)` and `=MAX(D2:D1142)`. A negative minimum is impossible for an allocation and flags an error. Count suspicious zeros with `=COUNTIF(D2:D1142,0)` — a true zero (a city with no economic-development tax) is plausible, but a zero for a city that reported a positive allocation last year is likely miscoded missing data.
 
-**2. Missingness.** Count blanks with `=COUNTBLANK(D2:D14162)`, then compute the missing rate as that count divided by `=COUNTA(A2:A14162)`. Use a PivotTable with `year` in Rows and a count of blanks to check whether missingness clusters in recent years — the reporting-lag pattern from the opening case.
+**2. Missingness.** Count blanks with `=COUNTBLANK(D2:D1142)`, then compute the missing rate as that count divided by `=COUNTA(A2:A1142)`. A city present in the population column but blank on allocation has not been screened out by the Comptroller's coverage rule — investigate before dropping it.
 
-**3. Duplicates.** Build a key with `=A2&"_"&B2` (city and year) in a helper column, then `=COUNTIF($E$2:$E$14162,E2)`. Any value above 1 means a city-year appears twice — a duplicate to investigate, not silently sum.
+**3. Duplicates.** Build a key on `city` with `=COUNTIF($A$2:$A$1142,A2)`. Any value above 1 means a city appears twice — often an annexation or a name-spelling variant — a duplicate to investigate, not silently sum.
 
 **4. A cleaning log.** Record every decision in a separate sheet so the cleaning is reproducible.
 
 | Check | Excel function | Finding | Action |
 |---|---|---|---|
-| Minimum value | `MIN` | −4,200 (one city, 2017) | Flag; trace to source; treat as missing |
-| Missing rate | `COUNTBLANK`/`COUNTA` | 6.2% overall, 18% in 2024 | Note reporting lag; exclude 2024 or footnote |
-| Duplicate keys | `COUNTIF` on city_year | 11 duplicate city-years | Investigate; keep most recent record |
-| Zero values | `COUNTIF(...,0)` | 240 zeros | Verify which are true no-tax cities |
+| Minimum value | `MIN` | $0 (several small cities) | Verify which are true no-tax cities |
+| Maximum value | `MAX` | Far above the \$395 mean | Confirm as a real outlier, not a typo |
+| Missing rate | `COUNTBLANK`/`COUNTA` | A handful of blank allocations | Trace to source before dropping |
+| Duplicate keys | `COUNTIF` on city | A few duplicate city names | Investigate annexations / spellings |
 
-> **Returning to the Case:** The workforce board's 91 percent fails almost every screen in this chapter. Its outcome (coursework completion) has weak construct validity for "workforce success"; its reliability is undermined by three providers using three definitions; its denominator suffers a coverage problem from dropped withdrawals; and its key field has 20 percent non-random missingness. Your briefing should not report a corrected single number — it should report a defensible operational definition, the rate computed under that definition with missingness disclosed, and a recommendation that providers adopt a common reporting standard. That is a more useful deliverable than any single percentage.
+> **Returning to the Case:** NSW shows why measurement comes before analysis. The randomized design is as clean as evaluation gets, yet the program's apparent effect swung from **+\$1,794** (experimental) to **−\$8,498** (non-experimental comparison) depending on which comparison group and which earnings source were used (LaLonde 1986; Dehejia & Wahba 1999). No statistical sophistication rescues a study that has not pinned down its outcome definition, its data source, and its comparison. Your deliverable is never a single headline number stripped of its definition — it is a defensible operational definition, the outcome computed under that definition with missingness and source disclosed, and an honest statement of which comparison the number rests on.
 
 ## Common Pitfalls
 
@@ -135,16 +142,16 @@ Suppose you have the Texas city finance panel open, with one row per city-year a
 
 ## Practice and Application
 
-1. **Operationalize a concept.** For the county panel, write three competing operational definitions of "voter engagement" (e.g., different turnout denominators). Compute each in Excel for Travis and Hays counties in 2020 and explain in a paragraph how the choice of definition could change an evaluation's conclusion.
+1. **Operationalize a concept.** For the Case B county panel, write three competing operational definitions of "voter engagement" (e.g., votes over voting-age population, over registered voters, over citizen voting-age population). Compute each in Excel for two counties in 2020 and explain in a paragraph how the choice of denominator could change an evaluation's conclusion.
 
-2. **Validity and reliability.** A school district claims its "college readiness index" measures readiness. List two threats to its construct validity and one threat to its reliability, and propose one check for each.
+2. **Validity and reliability.** In NSW (Case C), 1978 earnings can be drawn from a follow-up survey or from administrative UI wage records. List two threats to the construct validity of "workforce success" measured as earnings, and one reason the two sources might disagree (a reliability threat), and propose one check for each.
 
-3. **Levels of measurement.** Classify five variables from the city finance panel by level of measurement. For each, state one statistic that is legitimate and one that is not.
+3. **Levels of measurement.** Classify five variables from the Case A sales-tax file (e.g., `alloc_per_capita`, `taxable_sales`, business-outlet count, Type A/Type B status, city name) by level of measurement. For each, state one statistic that is legitimate and one that is not.
 
-4. **Screen a variable.** Using the city finance panel, screen `taxable_sales` for range, missingness, and duplicates using `MIN`, `MAX`, `COUNTBLANK`, `COUNTA`, and `COUNTIF`. Produce a four-row cleaning log like the worked example.
+4. **Screen a variable.** Using the Case A file, screen `taxable_sales` for range, missingness, and duplicates using `MIN`, `MAX`, `COUNTBLANK`, `COUNTA`, and `COUNTIF`. Produce a four-row cleaning log like the worked example.
 
-5. **Spot the redefinition.** Suppose median household income in the county panel jumps sharply in one year for many counties at once. Describe how you would determine whether this is a real economic shift or a measurement change, and what evidence would distinguish the two.
+5. **Spot the redefinition.** In Case D (MTO), suppose the recorded "neighborhood poverty rate" shifts sharply for many families at once between two waves. Describe how you would determine whether this reflects real neighborhood change or a measurement change (e.g., the Census changing how poverty is tabulated), and what evidence would distinguish the two.
 
 ## Transition to Chapter 5
 
-You now have indicators you can defend and data you have screened. The next question is what those numbers actually look like. Before any comparison or model, a competent evaluator describes the data — its center, its spread, its outliers, and whether the groups being compared even started in the same place. Chapter 5 turns to describing and presenting data for decision-makers, building the tables and charts in Excel that make an evaluation legible to the people who must act on it.
+You now have indicators you can defend and data you have screened. The next question is what those numbers actually look like. Before any comparison or model, a competent evaluator describes the data — its center, its spread, its outliers, and whether the groups being compared even started in the same place. Chapter 5 turns to describing and presenting data for decision-makers, taking the Case A sales-tax allocation as its worked example — a distribution whose \$395 mean and \$276 median already hint at a strong right skew — and building the tables and charts in Excel that make an evaluation legible to the people who must act on it.

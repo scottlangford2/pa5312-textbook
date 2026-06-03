@@ -14,18 +14,19 @@ permalink: /docs/chapter10/
 > "Random assignment is a procedure for creating treatment and control groups that are, on average, identical in every way except the treatment itself."
 > — Alan S. Gerber and Donald P. Green, *Field Experiments* (2012)
 
-## Opening Case: The Travis County Eviction-Diversion Pilot
+## Opening Case: Moving to Opportunity
 
-A coalition of judges, legal-aid attorneys, and the Travis County commissioners is alarmed by the post-pandemic surge in residential evictions. Their idea is a *diversion* program: when a landlord files for eviction, the tenant is offered a 30-minute mediation session plus one-time rental assistance before the case goes before a justice of the peace. Advocates believe the program will sharply reduce the number of households that lose their housing. Skeptics on the commissioners' court worry that the families who *accept* mediation would have worked things out anyway, and that the program will simply spend public money on outcomes that would have happened regardless.
+In the 1990s, the U.S. Department of Housing and Urban Development launched one of the most ambitious social experiments in American history. The **Moving to Opportunity (MTO)** demonstration enrolled roughly 4,600 low-income families living in high-poverty public-housing projects in five cities — Baltimore, Boston, Chicago, Los Angeles, and New York. The policy question was old and contested: does growing up in a poor neighborhood itself hold children back, or are the families who live there simply different in ways that would limit their children regardless of address? Decades of observational studies had compared children from poor and non-poor neighborhoods and found large gaps — but skeptics rightly objected that families do not land in neighborhoods at random. The motivated, the employed, the better-connected sort themselves into better places. Any neighborhood "effect" might be nothing more than the selection of who lives where.
 
-You are hired to evaluate the pilot. Your first instinct is to compare eviction rates for tenants who used mediation against those who did not. But you quickly see the problem: tenants who voluntarily show up to mediation are different from those who do not. They may be more motivated, more employed, or simply more able to take an afternoon off work. Any difference in outcomes could reflect *who chose the program* rather than *what the program did*. This is selection bias, the recurring villain of the earlier chapters.
+MTO broke that deadlock by design. Among families who volunteered, HUD used a **lottery** to assign each to one of three arms: an *experimental* group offered a housing voucher that could be used only in a low-poverty neighborhood (plus counseling to help them move), a *Section 8* group offered an unrestricted voucher, and a *control* group offered no new voucher. Because the arm a family landed in was decided by chance, the groups were, on average, alike in motivation, employment history, family structure, and every other trait — measured or not — except the offer they received. For the first time, a difference in their children's later outcomes could be read as the *effect of the offer to move*, not the effect of the kind of family that moves.
 
-The court has enough funding to serve only about half of eligible filings in the first year. That scarcity is, from an evaluation standpoint, an opportunity. If the county allocates the limited slots *by lottery* among eligible tenants, you can compare the lucky and unlucky groups and, for once, defend a genuine causal claim about the program's effect.
+You will spend this chapter learning why that single design choice — assignment by chance — does what no amount of statistical control can. You will also learn why MTO is the perfect teaching case for what randomization *cannot* fix on its own: many families offered the experimental voucher never actually moved, so the experiment must carefully separate the effect of being *offered* the voucher from the effect of *using* it.
 
 **Guiding Questions**
 
 - Why does random assignment, and almost nothing else, let us interpret a group difference as a causal effect?
-- What real-world complications — refusal of treatment, dropout, neighbors talking to neighbors — threaten an experiment even after we randomize?
+- When many of those offered a program never take it up, what exactly are we estimating — and what should we report?
+- What real-world complications — refusal of treatment, dropout, contamination across groups — threaten an experiment even after we randomize?
 - Is it ethical, and is it feasible, to assign a public benefit by chance?
 
 ## Why This Chapter Matters
@@ -50,20 +51,20 @@ $$\widehat{\text{ATE}} = \bar{Y}_{\text{treatment}} - \bar{Y}_{\text{control}}$$
 
 > **Briefing:** Randomization does not make the two groups identical in any single sample — it makes them identical *in expectation*, balancing both the characteristics you measured and the ones you never thought to measure.
 
-That last clause is the magic. Matching and regression can only balance variables you have data on. Randomization balances *everything*, including unobserved motivation, family support, and a tenant's relationship with the landlord — the very things that drive selection bias in the eviction case.
+That last clause is the magic. Matching and regression can only balance variables you have data on. Randomization balances *everything*, including unobserved motivation, family support, and a parent's drive to find a safer block — the very things that make families who already live in low-poverty neighborhoods a misleading comparison group. In MTO, the lottery is what lets us treat the control families' later outcomes as a credible picture of how the experimental families' children *would have* fared had they not been offered the chance to move.
 
 ### Designing an RCT
 
 A credible experiment has a few non-negotiable parts:
 
-- **A defined population and eligibility rule.** In the case, "tenants with an eviction filed in a participating JP court."
-- **A treatment and a control condition.** Treatment: offer mediation plus assistance. Control: business as usual (the existing court process).
-- **A randomization mechanism** that is genuinely unpredictable and documented — a random-number generator, a sealed-envelope lottery, or a published seed.
-- **Pre-specified outcomes** measured the same way for both groups (e.g., whether a writ of possession issued within 90 days).
+- **A defined population and eligibility rule.** In MTO, "families with children living in public housing in selected high-poverty census tracts who volunteered for the demonstration."
+- **A treatment and a control condition.** Treatment: offer a housing voucher (in MTO's experimental arm, one usable only in a low-poverty area, plus mobility counseling). Control: no new voucher — the family's existing situation.
+- **A randomization mechanism** that is genuinely unpredictable and documented — a random-number generator, a sealed-envelope lottery, or a published seed. MTO used a lottery among eligible volunteers.
+- **Pre-specified outcomes** measured the same way for both groups (in MTO, later adult earnings, college attendance, and health, drawn from administrative tax and enrollment records).
 
 > **Briefing:** Decide and write down your outcomes and analysis *before* you see the data. Choosing the outcome that happens to look best after the fact is a recipe for false findings.
 
-**Blinding.** In medical trials, neither patient nor doctor knows who got the real drug, which prevents expectations from coloring outcomes. In public programs, blinding the *participant* to whether they received mediation is usually impossible. But you can often blind the *people who measure outcomes* — the coder who reads case files should not know which arm a case belongs to. That guards against measurement bias even when full blinding is infeasible.
+**Blinding.** In medical trials, neither patient nor doctor knows who got the real drug, which prevents expectations from coloring outcomes. In public programs, blinding the *participant* to whether they received a voucher is usually impossible — a family knows whether it moved. But you can often blind the *people who measure outcomes* — the analyst who matches later tax records should not be steered by which arm a family belonged to. That guards against measurement bias even when full blinding is infeasible.
 
 ## When Reality Intrudes: Attrition, Noncompliance, and Spillovers
 
@@ -71,62 +72,73 @@ Randomization at the moment of assignment is clean. What happens afterward rarel
 
 ### Attrition
 
-Attrition is the loss of subjects from measurement — tenants who move and cannot be tracked, records that go missing. The danger is not the lost sample size; it is *differential* attrition. If unsuccessful treatment-group tenants are the ones who disappear (because they were evicted and left no forwarding address), the surviving treatment group looks artificially successful. Always report attrition rates by arm and check whether the dropouts differ on baseline characteristics.
+Attrition is the loss of subjects from measurement — families who move and cannot be tracked, records that go missing. The danger is not the lost sample size; it is *differential* attrition. If the families who disappear from one arm differ systematically from those who disappear from the other, the surviving samples are no longer comparable and the estimate is biased. MTO's long-run follow-ups largely sidestepped this trap by measuring outcomes through administrative tax and college-enrollment records rather than re-interviewing families, so very few subjects were truly lost. Even so, the rule stands: always report attrition rates by arm and check whether the dropouts differ on baseline characteristics.
 
-### Noncompliance and ITT vs. ToT
+### Noncompliance and ITT vs. Treatment-on-the-Treated
 
-Some tenants assigned to mediation will refuse to attend. Some assigned to control may find mediation through a nonprofit on their own. Assignment and actual treatment have come apart.
+MTO is the textbook illustration of noncompliance. Being *offered* the experimental voucher did not mean a family *used* it: take-up was only partial — a large share of families offered the low-poverty voucher never managed to move, whether because they could not find a qualifying unit, faced landlord resistance, or chose to stay near family and familiar schools. Assignment and actual treatment came apart.
 
-You have two honest things to estimate. The **intention-to-treat (ITT)** effect compares everyone *as randomized*, regardless of what they actually did. It answers the policy question a commissioner cares about: "If we offer this program, what happens?" The **treatment-on-the-treated (ToT)** effect tries to recover the effect on those who actually complied. Intuitively, if only 60% of the treatment group took up mediation and the program can only work through mediation, the ToT is roughly the ITT scaled up — the same total effect concentrated among the 60% who participated.
+You have two honest things to estimate. The **intention-to-treat (ITT)** effect compares everyone *as randomized*, regardless of whether they moved. It answers the policy question a HUD administrator cares about: "If we offer this voucher, what happens?" The **treatment-on-the-treated (ToT)** effect tries to recover the effect on those who actually complied — the families who used the voucher to move. Intuitively, if only a fraction of the offered families moved and the program can only work by changing where a child grows up, the ToT is the ITT scaled up by dividing by the take-up rate — the same total effect concentrated among the families who actually relocated. Because the move was the active ingredient and only some families moved, the effect *per family who moved* is considerably larger than the effect *per family offered the voucher*.
 
-> **Briefing:** ITT preserves the randomization and is almost always the right headline number for a public decision-maker, because real programs can only *offer*, not *force*, participation.
+> **Briefing:** ITT preserves the randomization and is almost always the right headline number for a public decision-maker, because real programs can only *offer*, not *force*, participation. The ToT answers a different question — "how much does the program help those who actually use it?" — and in MTO the two differ sharply because take-up was partial.
 
-### Spillovers
+### Spillovers and Contamination
 
-The independence that makes randomization work assumes one person's treatment does not affect another's outcome. That can fail. If mediation training changes how a landlord behaves toward *all* their tenants — including control-group tenants in the same building — the control group is contaminated and the estimated effect is understated. When spillovers are likely, evaluators sometimes randomize at the group level (e.g., by court or by apartment complex) rather than the individual level.
+The independence that makes randomization work assumes one person's treatment does not affect another's outcome. That can fail. In MTO, the *Section 8* arm received unrestricted vouchers, so some control-comparison contrasts had to be read carefully to avoid mixing arms. More generally, if a program changes a shared environment — a school, a labor market, an apartment complex — members of the control group can be indirectly affected, contaminating the comparison and understating (or overstating) the estimated effect. When spillovers are likely, evaluators sometimes randomize at the group level (e.g., by site or by building) rather than the individual level.
 
 ## Ethics and Feasibility
 
-Is a lottery for a public benefit fair? Often it is *more* fair than the alternatives, especially when slots are genuinely scarce — a lottery treats every eligible person equally, with no favoritism. Ethical experiments rest on a few pillars: there should be genuine uncertainty about whether the program helps (*equipoise*); participants should give informed consent where practical; and the control group should not be denied anything they were already entitled to. A common humane design is the **waitlist** or **phase-in**: the control group receives the program later, so the trial only randomizes the *order* of a benefit everyone eventually gets. Some programs simply cannot be randomized — you cannot randomize which cities get hit by a hurricane — and for those we fall back on the quasi-experimental designs from earlier chapters.
+Is a lottery for a public benefit fair? Often it is *more* fair than the alternatives, especially when slots are genuinely scarce — a lottery treats every eligible person equally, with no favoritism. MTO's vouchers were a scarce, sought-after benefit; allocating them by chance among willing volunteers was arguably the most equitable mechanism available, and it produced knowledge that has shaped housing policy for a generation. Ethical experiments rest on a few pillars: there should be genuine uncertainty about whether the program helps (*equipoise*); participants should give informed consent where practical; and the control group should not be denied anything they were already entitled to — MTO's control families kept their existing housing assistance. A common humane design is the **waitlist** or **phase-in**: the control group receives the program later, so the trial only randomizes the *order* of a benefit everyone eventually gets. Some programs simply cannot be randomized — you cannot randomize which cities get hit by a hurricane — and for those we fall back on the quasi-experimental designs from earlier chapters.
 
-### Worked Example: Analyzing the Eviction Trial in Excel
+### What MTO Found, and Why It Could Be Believed
 
-Suppose 600 eligible tenants were randomized, 300 to each arm. The outcome is a binary indicator, `evicted` (1 = a writ of possession issued within 90 days, 0 = not). Your spreadsheet has one row per tenant with columns `treat` (1/0) and `evicted` (1/0).
+When Chetty, Hendren, and Katz (2016) linked the MTO families to federal tax records years later, they found that children who moved to a low-poverty neighborhood *while young* — before about age 13 — went on to earn substantially more as adults. In their mid-twenties these children earned roughly **\$3,477 more per year (about 31% more)** than the control-group children, whose average annual earnings were about **\$11,270**; they were also more likely to attend college and lived in better neighborhoods themselves. Because the move was assigned by lottery, this earnings gap could be attributed to the *offer to move into a lower-poverty area* rather than to the kind of family that chooses such a neighborhood. (An earlier wave of results — Kling, Liebman, and Katz, 2007 — had found clear gains in adult mental health but limited short-run economic self-sufficiency effects; the long-run earnings payoff for young movers became visible only once the children grew up. This is itself a lesson: when a program's benefits accrue to children over decades, a short follow-up can mistakenly conclude "no effect.")
 
-**Step 1 — Check balance.** Before trusting the randomization, confirm the arms look similar on baseline traits. Use `AVERAGEIF` to compare, say, baseline monthly rent by arm: `=AVERAGEIF(treat_range, 1, rent_range)` versus `=AVERAGEIF(treat_range, 0, rent_range)`. Large gaps would signal a broken randomization.
+### Why Randomization Removes Selection Bias: NSW vs. the Naive Comparison
 
-**Step 2 — Estimate the ITT effect.** Compute each arm's eviction rate with `AVERAGEIF` on the `evicted` column. The difference is the estimated treatment effect on the eviction *rate*.
+The clearest demonstration that randomization is doing the heavy lifting comes from the **National Supported Work (NSW)** demonstration, a job-training experiment that randomly assigned disadvantaged applicants to a subsidized work program or to a control group. Because assignment was random, the honest experimental estimate of the program's effect on 1978 earnings is simply the difference in arm means: treated participants earned **\$6,349** on average (n = 185) versus **\$4,555** for controls (n = 260) — an effect of about **+\$1,794**.
 
-**Step 3 — Test it.** Run the ToolPak's **t-Test: Two-Sample Assuming Unequal Variances** (Data ▸ Data Analysis), with the treatment group's `evicted` values as Variable 1 and the control group's as Variable 2. Equivalently — and this scales to adding controls later — run **Regression** with `evicted` as Y and `treat` as the single X. The coefficient on `treat` *is* the difference in means, and its p-value tests the same hypothesis.
+Now suppose you had thrown away the experiment and instead done what observational analysts are forced to do: compare the trained participants to a "comparison group" of non-participants drawn from a national survey. LaLonde (1986) did exactly this and found a *negative* estimated effect of roughly **−\$8,498** — the program appeared to *destroy* earnings. The reason is selection: people who enroll in job training for the disadvantaged start out far poorer than the general population, so a naive comparison loads the dice against the program. Dehejia and Wahba (1999) later showed that careful matching on observed characteristics could partly recover the experimental answer — but only partly, and only because they had the experiment to check against. The lesson is stark: the same program looks like a **+\$1,794** success under randomization and an **−\$8,498** disaster under a naive comparison. Randomization is what turns a group difference into a causal effect.
 
-| Quantity | Excel result |
+### Worked Example: Analyzing a Randomized Experiment in Excel
+
+We will analyze the NSW experiment exactly as you would any RCT: as a difference in means, which is identical to a regression of the outcome on a treatment indicator. Lay out one row per participant with columns `treat` (1 = job-training arm, 0 = control) and `earn78` (1978 earnings in dollars). The treated arm has 185 people, the control arm 260.
+
+**Step 1 — Check balance.** Before trusting the randomization, confirm the arms look similar on baseline traits. Use `AVERAGEIF` to compare, say, pre-program (1975) earnings by arm: `=AVERAGEIF(treat_range, 1, earn75_range)` versus `=AVERAGEIF(treat_range, 0, earn75_range)`. In NSW the arms were close on baseline earnings — the sign of a sound lottery.
+
+**Step 2 — Estimate the effect.** Compute each arm's average 1978 earnings with `AVERAGEIF` on the `earn78` column: `=AVERAGEIF(treat_range, 1, earn78_range)` gives the treated mean, `=AVERAGEIF(treat_range, 0, earn78_range)` the control mean. The difference is the estimated treatment effect.
+
+**Step 3 — Test it.** Run the ToolPak's **t-Test: Two-Sample Assuming Unequal Variances** (Data ▸ Data Analysis), with the treatment arm's `earn78` values as Variable 1 and the control arm's as Variable 2. Equivalently — and this scales to adding controls later — run **Regression** with `earn78` as Y and `treat` as the single X. The coefficient on `treat` *is* the difference in means, and its p-value tests the same hypothesis.
+
+| Quantity | Result |
 |---|---|
-| Control eviction rate $\bar{Y}_{C}$ | 0.42 |
-| Treatment eviction rate $\bar{Y}_{T}$ | 0.30 |
-| Estimated ITT effect | $-0.12$ (12 fewer evictions per 100) |
-| t-test two-tail p-value | 0.003 |
-| Regression coef. on `treat` | $-0.12$, p = 0.003 |
+| Control mean earnings $\bar{Y}_{C}$ (n = 260) | \$4,555 |
+| Treatment mean earnings $\bar{Y}_{T}$ (n = 185) | \$6,349 |
+| Estimated treatment effect | $+\$1,794$ |
+| Regression coef. on `treat` | $+\$1,794$ |
+| Naive (non-experimental) comparison, for contrast | $-\$8,498$ |
 
-The negative coefficient says assignment to the program lowered the eviction rate by 12 percentage points, and the p-value says a gap this large is very unlikely if the program truly did nothing.
+The positive coefficient says assignment to the job-training program raised 1978 earnings by about \$1,794. The final row is the cautionary contrast: had you compared trainees to an ordinary survey sample instead of to randomized controls, you would have estimated a \$8,498 *loss* — a sign-flipping artifact of selection, not a real effect.
 
-> **Returning to the Case:** Because slots were assigned by lottery, the 12-point drop is not an artifact of which tenants chose mediation — the lottery balanced motivation and circumstance across arms. You can tell the commissioners' court, with a straight face, that *offering* the program (ITT) caused fewer evictions. If only 70% of the treatment arm actually attended mediation, you would note that the effect *among attenders* (ToT) is larger still, and you would report the attrition rate in each arm so the court can judge whether tracking loss might be flattering your result.
+> **Returning to the Case:** MTO and NSW make the same point from two directions. Because both used a lottery, the difference in arm means is a credible causal effect — MTO's young movers earned about 31% more as adults, and NSW's trainees earned about \$1,794 more. And because NSW also has a naive non-experimental benchmark, it shows what you avoid by randomizing: an estimate that comes out −\$8,498 and gets the very sign of the effect wrong. When you report MTO, you would lead with the **ITT** — the effect of being *offered* the voucher — because HUD can only offer, not compel, a move; you would then note that the effect *among families who actually moved* (the **ToT**) is larger, since take-up was only partial; and you would document how outcomes were tracked so readers can judge attrition.
 
 ## Common Pitfalls
 
-- **Reporting the ToT as if it were the program's overall effect.** A commissioner authorizes an *offer*, not guaranteed participation; lead with the ITT.
+- **Reporting the ToT as if it were the program's overall effect.** A policymaker authorizes an *offer*, not guaranteed participation; lead with the ITT. In MTO, the per-mover effect is real but answers a narrower question than "what does the voucher offer accomplish?"
 - **Ignoring differential attrition.** A clean randomization can still produce a biased estimate if the groups are measured unequally afterward.
-- **Analyzing only compliers as a self-contained group.** Comparing tenants who *attended* mediation to controls who *didn't* throws away the randomization and reintroduces selection bias — the original sin you used the experiment to avoid.
+- **Analyzing only compliers as a self-contained group.** Comparing the MTO families who *moved* to the control families who *didn't* throws away the randomization and reintroduces selection bias — the original sin you used the experiment to avoid. (This is exactly the trap NSW's −\$8,498 naive estimate illustrates.)
 - **Treating a statistically significant difference as a large or important one.** Significance and magnitude are different questions; always report the effect size.
 - **Forgetting that small samples can be imbalanced by chance.** Always check baseline balance even after a valid lottery.
+- **Concluding "no effect" from a follow-up that ends too soon.** MTO's earnings payoff for young movers was invisible in the short run and emerged only once the children reached adulthood.
 
 ## Practice and Application
 
 1. **Balance check.** Using the Texas county panel, pretend you will randomize 254 counties into a "treatment" and "control" arm with Excel's `RAND()` function and a 0.5 cutoff. After assigning, use `AVERAGEIF` to compare median household income across your two random arms. Are they close? Repeat the randomization three times and comment on how much the balance varies sample to sample.
-2. **ITT vs. ToT reasoning.** In the eviction trial, suppose 70% of the treatment arm attended mediation and the ITT effect is $-0.12$. Give an intuitive (back-of-envelope) estimate of the ToT effect, and explain in two sentences which number you would put in the executive summary and why.
-3. **Attrition diagnosis.** You learn that 15% of the treatment arm and 30% of the control arm could not be located at follow-up. Explain how this pattern could bias the estimated effect, and state the direction of the likely bias.
-4. **Spillover design.** The county worries that mediation changes landlord behavior toward *all* their tenants. Propose a randomization scheme that addresses this, and explain what you would now treat as the unit of analysis.
-5. **Excel regression.** Build a 40-row mock dataset with `treat` and a continuous outcome (days housing was retained). Run the ToolPak Regression of the outcome on `treat`, and write one sentence interpreting the coefficient and its p-value for a non-technical reader.
+2. **ITT vs. ToT reasoning.** Suppose only half of the MTO families offered the experimental voucher actually used it to move, and the ITT effect on adult earnings is \$1,000 per offered family. Give an intuitive (back-of-envelope) estimate of the ToT effect — the effect per family that moved — and explain in two sentences which number you would put in a HUD executive summary and why.
+3. **Selection bias by hand.** Using the NSW numbers in the worked example, state in your own words why the experimental estimate (+\$1,794) and the naive comparison (−\$8,498) differ so dramatically, and what feature of the people who enroll in job training drives the naive estimate negative.
+4. **Attrition diagnosis.** You learn that 15% of the treatment arm and 30% of the control arm could not be located at follow-up. Explain how this pattern could bias the estimated effect, and state the direction of the likely bias.
+5. **Excel regression.** Build a small mock dataset with `treat` (1/0) and a continuous outcome (e.g., 1978 earnings) whose arm means reproduce the NSW result (treated ≈ \$6,349, control ≈ \$4,555). Run the ToolPak Regression of the outcome on `treat`, confirm the coefficient is about \$1,794, and write one sentence interpreting it and its p-value for a non-technical reader.
 
 ## Transition to Chapter 11
 
-The eviction trial answered *whether* the program works. The commissioners' next question is harder: *is it worth it?* Twelve fewer evictions per hundred filings is a real benefit, but mediation sessions, staff time, and rental assistance all cost money — and the benefits arrive over years while the costs are paid up front. Chapter 11 turns to cost-benefit and cost-effectiveness analysis, where we learn to put costs and benefits on a common footing, account for the time value of money, and decide whether a program that *works* is a program worth *funding*.
+MTO and NSW answered *whether* the programs work: a move to a lower-poverty neighborhood raised children's adult earnings, and job training raised participants' earnings by about \$1,794 a year. The next question is harder: *is it worth it?* A voucher, mobility counseling, and a year of subsidized work all cost money — and the earnings benefits arrive over years while the costs are paid up front. Chapter 11 turns to cost-benefit and cost-effectiveness analysis, where we learn to put costs and benefits on a common footing, account for the time value of money, and decide whether a program that *works* is a program worth *funding*.
