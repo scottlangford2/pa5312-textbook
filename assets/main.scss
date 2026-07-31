@@ -1,0 +1,17 @@
+---
+# Front matter (the two dashes) is required so Jekyll processes this Sass file.
+---
+
+@import "minima";
+
+/* --- Course customizations --- */
+
+/* Justify body text throughout the book. */
+.page-content {
+  p,
+  li {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}

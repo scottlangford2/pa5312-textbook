@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 10"
+title: "Chapter 10: Randomized Controlled Trials"
+nav_label: "Ch 10"
 permalink: /docs/chapter10/
 ---
 
-# Randomized Controlled Trials
 
 ## Epigraphs
 
@@ -35,13 +35,13 @@ Every design we have studied so far tries to *approximate* the comparison a rand
 
 ## Random Assignment and the Logic of Causal Identification
 
-Recall the potential-outcomes framework. For each person $i$ there are two potential outcomes: $Y_i(1)$, the outcome if treated, and $Y_i(0)$, the outcome if not. The individual causal effect is $Y_i(1) - Y_i(0)$. We can never observe both — this is the *fundamental problem of causal inference*. We see a person either in the program or out of it, never both.
+Recall the potential-outcomes framework. For each person $$i$$ there are two potential outcomes: $$Y_i(1)$$, the outcome if treated, and $$Y_i(0)$$, the outcome if not. The individual causal effect is $$Y_i(1) - Y_i(0)$$. We can never observe both — this is the *fundamental problem of causal inference*. We see a person either in the program or out of it, never both.
 
 What we can hope to recover is the **average treatment effect** (ATE):
 
 $$\text{ATE} = E[Y_i(1)] - E[Y_i(0)]$$
 
-The trouble in observational data is that the people we observe as treated are not a fair stand-in for everyone's $Y_i(1)$, and the untreated are not a fair stand-in for everyone's $Y_i(0)$. Random assignment fixes exactly this. When treatment $D_i$ is assigned by a coin flip, it is statistically independent of the potential outcomes:
+The trouble in observational data is that the people we observe as treated are not a fair stand-in for everyone's $$Y_i(1)$$, and the untreated are not a fair stand-in for everyone's $$Y_i(0)$$. Random assignment fixes exactly this. When treatment $$D_i$$ is assigned by a coin flip, it is statistically independent of the potential outcomes:
 
 $$E[Y_i(0) \mid D_i = 1] = E[Y_i(0) \mid D_i = 0]$$
 
@@ -78,7 +78,7 @@ Attrition is the loss of subjects from measurement — families who move and can
 
 MTO is the textbook illustration of noncompliance. Being *offered* the experimental voucher did not mean a family *used* it: take-up was only partial — a large share of families offered the low-poverty voucher never managed to move, whether because they could not find a qualifying unit, faced landlord resistance, or chose to stay near family and familiar schools. Assignment and actual treatment came apart.
 
-You have two honest things to estimate. The **intention-to-treat (ITT)** effect compares everyone *as randomized*, regardless of whether they moved. It answers the policy question a HUD administrator cares about: "If we offer this voucher, what happens?" The **treatment-on-the-treated (ToT)** effect tries to recover the effect on those who actually complied — the families who used the voucher to move. Intuitively, if only a fraction of the offered families moved and the program can only work by changing where a child grows up, the ToT is the ITT scaled up by dividing by the take-up rate — the same total effect concentrated among the families who actually relocated. Because the move was the active ingredient and only some families moved, the effect *per family who moved* is considerably larger than the effect *per family offered the voucher*.
+You have two honest things to estimate. The **intention-to-treat (ITT)** effect compares everyone *as randomized*, regardless of whether they moved. It answers the policy question a HUD administrator cares about: "If we offer this voucher, what happens?" The **treatment-on-the-treated (ToT)** effect tries to recover the effect on those who actually complied — the families who used the voucher to move. Intuitively, if only a fraction of the offered families moved and the program can only work by changing where a child grows up, the ToT is the ITT scaled up by dividing by the take-up rate — the same total effect concentrated among the families who actually relocated. Two assumptions make this "divide by take-up" shortcut exact: **one-sided noncompliance** (no control family could obtain the experimental voucher, so no one in the control arm is treated) and the **exclusion restriction** (being *offered* the voucher affects earnings only *through* the move, not in any other way). Both hold well in MTO. Strictly, then, what you recover is the effect on **compliers** — the families who moved *because* they were offered the voucher — the *local average treatment effect* (**LATE**); here it coincides with the effect on the treated, and it generalizes to families who would have moved anyway only under a further assumption. Because the move was the active ingredient and only some families moved, the effect *per complying family* is considerably larger than the effect *per family offered the voucher*.
 
 > **Briefing:** ITT preserves the randomization and is almost always the right headline number for a public decision-maker, because real programs can only *offer*, not *force*, participation. The ToT answers a different question — "how much does the program help those who actually use it?" — and in MTO the two differ sharply because take-up was partial.
 
@@ -88,7 +88,7 @@ The independence that makes randomization work assumes one person's treatment do
 
 ## Ethics and Feasibility
 
-Is a lottery for a public benefit fair? Often it is *more* fair than the alternatives, especially when slots are genuinely scarce — a lottery treats every eligible person equally, with no favoritism. MTO's vouchers were a scarce, sought-after benefit; allocating them by chance among willing volunteers was arguably the most equitable mechanism available, and it produced knowledge that has shaped housing policy for a generation. Ethical experiments rest on a few pillars: there should be genuine uncertainty about whether the program helps (*equipoise*); participants should give informed consent where practical; and the control group should not be denied anything they were already entitled to — MTO's control families kept their existing housing assistance. A common humane design is the **waitlist** or **phase-in**: the control group receives the program later, so the trial only randomizes the *order* of a benefit everyone eventually gets. Some programs simply cannot be randomized — you cannot randomize which cities get hit by a hurricane — and for those we fall back on the quasi-experimental designs from earlier chapters.
+Is a lottery for a public benefit fair? Often it is *more* fair than the alternatives, especially when slots are genuinely scarce — a lottery treats every eligible person equally, with no favoritism. MTO's vouchers were a scarce, sought-after benefit; allocating them by chance among willing volunteers was arguably the fairest mechanism available, and it produced knowledge that has shaped housing policy for a generation. Ethical experiments rest on a few pillars: there should be genuine uncertainty about whether the program helps (*equipoise*); participants should give informed consent where practical; and the control group should not be denied anything they were already entitled to — MTO's control families kept their existing housing assistance. A common humane design is the **waitlist** or **phase-in**: the control group receives the program later, so the trial only randomizes the *order* of a benefit everyone eventually gets. Some programs simply cannot be randomized — you cannot randomize which cities get hit by a hurricane — and for those we fall back on the quasi-experimental designs from earlier chapters.
 
 ### What MTO Found, and Why It Could Be Believed
 
@@ -99,6 +99,14 @@ When Chetty, Hendren, and Katz (2016) linked the MTO families to federal tax rec
 The clearest demonstration that randomization is doing the heavy lifting comes from the **National Supported Work (NSW)** demonstration, a job-training experiment that randomly assigned disadvantaged applicants to a subsidized work program or to a control group. Because assignment was random, the honest experimental estimate of the program's effect on 1978 earnings is simply the difference in arm means: treated participants earned **\$6,349** on average (n = 185) versus **\$4,555** for controls (n = 260) — an effect of about **+\$1,794**.
 
 Now suppose you had thrown away the experiment and instead done what observational analysts are forced to do: compare the trained participants to a "comparison group" of non-participants drawn from a national survey. LaLonde (1986) did exactly this and found a *negative* estimated effect of roughly **−\$8,498** — the program appeared to *destroy* earnings. The reason is selection: people who enroll in job training for the disadvantaged start out far poorer than the general population, so a naive comparison loads the dice against the program. Dehejia and Wahba (1999) later showed that careful matching on observed characteristics could partly recover the experimental answer — but only partly, and only because they had the experiment to check against. The lesson is stark: the same program looks like a **+\$1,794** success under randomization and an **−\$8,498** disaster under a naive comparison. Randomization is what turns a group difference into a causal effect.
+
+### A Small, High-Compliance RCT: Perry Preschool (Case E)
+
+MTO and NSW are large experiments. Perry Preschool (Case E) shows that the *same logic* governs a tiny one. A nonprofit randomly assigned just **123 children** — 58 to preschool, 65 to none — and followed them for decades. Two features make it a clean teaching contrast with MTO. First, **compliance was high**: nearly all children assigned to the program actually attended, so the offer-versus-received gap that forces MTO's ITT/ToT distinction barely arises — here the intention-to-treat effect *is*, for practical purposes, the effect of the program. Second, the outcomes are **binary**, so the arm comparison is a **two-proportion test** (Chapter 5) rather than a difference in means: 65% of the program group versus 45% of the comparison group graduated from a regular high school, a 20-percentage-point gap that — despite the tiny sample — reaches significance ($$z \approx 2.3$$, $$p \approx 0.02$$), and 36% versus 55% were arrested five or more times.
+
+The small sample is exactly the point. With 123 children the estimates carry **wide confidence intervals**, and a genuinely small effect would have been undetectable — a real risk that a well-run program can look null purely for want of subjects (the *statistical power* problem). But Perry's effects were large enough to clear that bar. The honest report of a small RCT states the effect *and* its imprecision, and leans on **replication** — the later Abecedarian and Head Start–era studies — rather than on one small sample, for external validity. Small-N does not mean unrigorous; it means the design must be clean and the uncertainty stated plainly.
+
+> **Briefing:** A randomized experiment with only ~120 subjects is still an experiment: randomization removes selection bias regardless of sample size. What a small sample costs is *precision* — wide intervals and low power — so a small RCT can credibly detect only large effects, and its generalization rests on replication.
 
 ### Worked Example: Analyzing a Randomized Experiment in Excel
 
@@ -112,11 +120,11 @@ We will analyze the NSW experiment exactly as you would any RCT: as a difference
 
 | Quantity | Result |
 |---|---|
-| Control mean earnings $\bar{Y}_{C}$ (n = 260) | \$4,555 |
-| Treatment mean earnings $\bar{Y}_{T}$ (n = 185) | \$6,349 |
-| Estimated treatment effect | $+\$1,794$ |
-| Regression coef. on `treat` | $+\$1,794$ |
-| Naive (non-experimental) comparison, for contrast | $-\$8,498$ |
+| Control mean earnings $$\bar{Y}_{C}$$ (n = 260) | \$4,555 |
+| Treatment mean earnings $$\bar{Y}_{T}$$ (n = 185) | \$6,349 |
+| Estimated treatment effect | $$+\$1,794$$ |
+| Regression coef. on `treat` | $$+\$1,794$$ |
+| Naive (non-experimental) comparison, for contrast | $$-\$8,498$$ |
 
 The positive coefficient says assignment to the job-training program raised 1978 earnings by about \$1,794. The final row is the cautionary contrast: had you compared trainees to an ordinary survey sample instead of to randomized controls, you would have estimated a \$8,498 *loss* — a sign-flipping artifact of selection, not a real effect.
 
@@ -138,6 +146,7 @@ The positive coefficient says assignment to the job-training program raised 1978
 3. **Selection bias by hand.** Using the NSW numbers in the worked example, state in your own words why the experimental estimate (+\$1,794) and the naive comparison (−\$8,498) differ so dramatically, and what feature of the people who enroll in job training drives the naive estimate negative.
 4. **Attrition diagnosis.** You learn that 15% of the treatment arm and 30% of the control arm could not be located at follow-up. Explain how this pattern could bias the estimated effect, and state the direction of the likely bias.
 5. **Excel regression.** Build a small mock dataset with `treat` (1/0) and a continuous outcome (e.g., 1978 earnings) whose arm means reproduce the NSW result (treated ≈ \$6,349, control ≈ \$4,555). Run the ToolPak Regression of the outcome on `treat`, confirm the coefficient is about \$1,794, and write one sentence interpreting it and its p-value for a non-technical reader.
+6. **Small-N RCT (Case E).** Perry Preschool randomized 58 children to preschool and 65 to none, with high-school graduation of 65% versus 45%. Compute the two-proportion z-test (Chapter 5) and confirm the gap is significant despite n = 123. Then explain in two or three sentences (a) why the near-full attendance makes the ITT and treatment-on-the-treated effects nearly identical here, unlike MTO, and (b) why you would still cite replication studies rather than Perry alone when arguing the result generalizes.
 
 ## Transition to Chapter 11
 

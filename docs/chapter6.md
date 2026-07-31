@@ -1,147 +1,157 @@
 ---
 layout: page
-title: "Chapter 6"
+title: "Chapter 6: Process and Implementation Evaluation"
+nav_label: "Ch 6"
 permalink: /docs/chapter6/
 ---
 
-# Comparing Groups: t-Tests and ANOVA
 
 ## Epigraphs
 
-> "The null hypothesis is never proved or established, but is possibly disproved, in the course of experimentation."
-> — Ronald A. Fisher, *The Design of Experiments* (1935)
+> "The best-laid schemes o' mice an' men gang aft agley."
+> — Robert Burns, "To a Mouse" (1785)
 
-> "Statistical significance is not the same as practical importance."
-> — a standard caution in applied statistics; treat as a maxim, not a citation
+> "A null result cannot be interpreted until you know whether the program was ever delivered."
+> — a standard caution in implementation evaluation; treat it as a maxim, not a citation
 
-## Opening Case: Do Metro Counties Vote at Different Rates? (Case B)
+## Opening Case: A Null Turnout Finding You Cannot Interpret (Case B)
 
-As Texas counties weigh adopting countywide vote centers, a common starting question is whether turnout even differs between the state's metropolitan and non-metropolitan counties to begin with. If urban and rural counties already turn out at sharply different rates, an evaluation of vote centers must account for that gap; if they turn out at similar rates, the comparison is simpler. So your team begins with the most basic group comparison there is: in the 2020 election, did metro counties have different turnout than non-metro counties?
+In Chapter 5 your team put the 2020 metro/non-metro turnout comparison through a Welch t-test and came back with a small, non-significant, slightly-negative gap — metro counties at **0.554**, non-metro at **0.580**. Now imagine the harder version of that exercise. A county adopted countywide vote centers, and its post-adoption turnout is statistically indistinguishable from what it was before. The county commissioners want to know one thing: did vote centers not work?
 
-The descriptive numbers from Chapter 5 are close. Metro counties (n = 86) averaged turnout of **0.554**; non-metro counties (n = 168) averaged **0.580** — non-metro counties were, if anything, *slightly higher*, which surprises most people who assume rural turnout lags. The whole question of this chapter is whether that small 0.026 gap is real or just sampling noise, and, if real, whether it is large enough to matter for policy.
+You cannot answer that question yet, and it is important to see exactly why. A flat turnout number is consistent with two completely different stories. In the first, vote centers were opened on schedule, staffed, and publicized, and voters simply did not respond — the program was delivered and the *idea* did not move turnout. In the second, half the planned vote-center locations never opened, the ones that did were understaffed, and no one told voters they could now cast a ballot anywhere in the county — the *idea* was never really tested because the program was never really delivered. The outcome data look identical in both cases. The commissioners' question — did vote centers work? — is unanswerable until you can say whether vote centers actually happened.
 
-The team also suspects the picture might differ if counties were split three ways — say small, mid-size, and large — rather than two. That is a three-group question, which a t-test cannot handle and which calls for analysis of variance.
-
-These demands map onto the two halves of this chapter. *Bigger than chance* is a question of statistical significance, answered with t-tests and ANOVA. *Big enough to matter* is a question of practical significance, answered with effect size and judgment. A competent evaluator never reports one without the other.
+This is the domain of process and implementation evaluation. Before, and often instead of, asking whether a program changed outcomes, it asks a prior and more basic question: was the program carried out as designed? Who did it reach, and at what intensity? Did the activities and outputs the logic model promised actually occur? An impact evaluation that skips this step is building a headline on a foundation it never inspected.
 
 **Guiding Questions**
 
-- When do we use a one-sample, an independent-samples, or a paired t-test — and what does each one actually compare?
-- How does one-way ANOVA extend group comparison to three or more groups, and why not just run many t-tests?
-- What is an effect size, and why can a result be statistically significant yet practically trivial — or, as in this case, fail to reach significance at all?
+- What does it mean to say a program was "implemented," and how would you gather evidence that it was?
+- How do fidelity, dosage, reach, and coverage each measure a different way delivery can succeed or fail?
+- Why is a null impact finding uninterpretable until you know whether the program was actually delivered — and how do you tell theory failure from implementation failure?
 
 ## Why This Chapter Matters
 
-Comparing a group that received a program to a group that did not is the most basic evaluation design there is, and the t-test is its workhorse. Almost every evaluation you read will, somewhere, compare two means and ask whether the gap is real. But the test only answers half the question. A large sample can make a meaningless difference "significant," and a small sample can hide a real one. Learning to pair every test with an effect size — and to say plainly whether a difference matters for policy — is what separates an evaluation from a p-value hunt.
+Every earlier chapter has pushed toward the impact question: did the program cause a change? This chapter insists on a question that comes first. Programs are not self-executing. A logic model can be sound, a design can be airtight, and the program can still fail simply because the activities on the left of the model never happened as planned — or happened to the wrong people, too weakly, too late. If you report a null impact without knowing whether the program was delivered, you have told the decision-maker nothing they can act on: they cannot tell whether to abandon the idea or fix the delivery. Process and implementation evaluation is what makes an impact finding interpretable, and on its own it is often the most useful thing an evaluator can hand a program manager who needs to improve a program while it is still running.
 
-## The Logic of Hypothesis Testing
+## What Process and Implementation Evaluation Is
 
-Every test in this chapter shares one logic. We state a **null hypothesis** ($H_0$) of no difference, assume it is true, and ask how surprising our observed data would be under that assumption. The **p-value** is the probability of seeing a difference at least as large as ours if the null were true. A small p-value means our data are hard to reconcile with "no difference," so we reject the null. By convention many fields use $\alpha = 0.05$ as the threshold, but the threshold is a convention, not a law of nature.
+**Process evaluation** (also called implementation evaluation) examines how a program operates: what it actually does, for whom, how much, and how well, measured against what the program said it would do. It lives on the left and middle of the logic model — inputs, activities, and outputs — the boxes the program largely controls. It is distinct from **impact evaluation**, which lives on the right — outcomes and impacts — and asks whether the program *caused* a change. The two are complements, not rivals: process evaluation tells you whether the machine was switched on; impact evaluation tells you whether switching it on changed anything downstream.
 
-> **Briefing:** A p-value is the probability of the data given no effect — not the probability that there is no effect. It never tells you the size or importance of a difference, only how compatible the data are with chance.
+You do a process evaluation in three situations. Early in a program's life, you do it *formatively*, to catch delivery problems while they can still be fixed. Alongside an impact evaluation, you do it to make the impact finding interpretable — to know, when outcomes do or do not move, whether the program was actually in the field. And on its own, for a program no one intends to subject to a rigorous impact study, a process evaluation can still answer the manager's real questions: are we reaching the people we meant to, at the intended intensity, with reasonable fidelity to the design?
 
-## The One-Sample t-Test
+> **Briefing:** Process evaluation asks whether the program was delivered as designed; impact evaluation asks whether the program worked. You usually cannot trust the answer to the second without the first.
 
-The one-sample t-test compares a single group's mean to a fixed benchmark — a statutory target, a statewide average, a prior-year figure treated as known. The statistic is
+## Formative vs. Summative Evaluation
 
-$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+A useful cross-cutting distinction concerns *when* and *why* you evaluate. **Formative evaluation** is conducted while a program is developing or running, to improve it: its audience is program staff, and its findings feed back into delivery. **Summative evaluation** is conducted to judge a program's overall merit or worth — typically for a funder or legislature deciding whether to continue, expand, or end it. Process evaluation is often formative (fixing delivery in real time) but can be summative (documenting, for the record, that a program was or was not implemented as promised). Impact evaluation is usually summative. The same data can serve both masters: a mid-course reading that the EDC (Case A) is disbursing incentives but not recruiting firms is *formative* if it prompts a course correction, and *summative* if it appears in the final report as evidence of what the program actually did.
 
-where $\bar{x}$ is the sample mean, $\mu_0$ the benchmark, $s$ the sample standard deviation, and $n$ the sample size. The denominator $s/\sqrt{n}$ is the standard error of the mean. Larger samples shrink the standard error, so the same gap becomes more "significant" as $n$ grows — a fact worth holding onto when we reach effect size.
+> **Briefing:** Formative asks "how do we make this better?"; summative asks "did this earn its keep?" Match the evaluation's timing, audience, and tone to which question the decision-maker is really asking.
 
-For example, in Case B you might test whether average county turnout in 2020 — about 0.57 across all 254 counties — differs from a statewide benchmark of 0.60. Excel has no single one-sample function, so compute $t$ directly from `AVERAGE`, `STDEV.S`, and `COUNT`, then get the p-value with `T.DIST.2T(ABS(t), n-1)`.
+## Reading the Logic Model as a Delivery Checklist
 
-## The Independent-Samples t-Test
+Chapter 2 built the logic model as a causal map. Process evaluation puts that same map to a second use: as a checklist for whether each promised activity and output actually occurred. Walk the model left to right and, for every box, ask *did this happen, as specified, and how would I know?*
 
-This is the central evaluation test: two separate groups, treatment and comparison, with no natural pairing between their members. It answers the opening question — did metro counties have different turnout than non-metro counties? The statistic compares the two group means relative to the variability within the groups:
+- **Inputs.** Were the resources the program assumed actually available? For MTO (Case D), were there enough participating landlords and mobility counselors to serve the families who won the lottery?
+- **Activities.** Were the activities carried out? For Case B, were vote centers actually opened at the planned locations, on the planned schedule, and publicized to voters?
+- **Outputs.** Did the countable products of those activities materialize at the promised level? For NSW (Case C), were the intended months of subsidized work actually delivered to each enrollee?
 
-$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}$$
+A box that the impact evaluation treats as settled — "the program ran" — is exactly the box process evaluation refuses to take on faith. Each becomes an indicator to instrument, not an assumption to grant.
 
-A decision you must make: do the two groups have equal variances? If you are unsure — and you usually are — use the **Welch** (unequal-variance) version, which is more robust and is the safer default (Agresti 2018).
+> **Briefing:** Re-read your logic model as a to-do list, not a theory. For every activity and output box, name the evidence that would show it actually occurred — and go collect it.
 
-> **Briefing:** When in doubt about equal variances, use the unequal-variance (Welch) t-test. It costs little when variances are equal and protects you when they are not.
+## Implementation Fidelity
 
-Recall from Chapter 5 that this test is only as credible as the baseline equivalence behind it. Metro and non-metro counties differ on income, education, and population all at once, so even a significant turnout difference would tell you the groups differ — not why. The cleanest contrast comes from randomized programs: in NSW (Case C) the treatment group earned \$6,349 versus \$4,555 for randomized controls, an independent-samples difference of +\$1,794 that *can* be read causally precisely because the lottery made the groups equivalent at baseline (LaLonde 1986; Dehejia & Wahba 1999).
+**Fidelity** is the degree to which a program was delivered as its design specified. A program with high fidelity looks, in the field, like the one on paper; a low-fidelity program has drifted — steps skipped, protocols improvised, a curriculum shortened, eligibility rules bent. Fidelity matters because a low-fidelity delivery quietly changes what is being evaluated: you may set out to test a designed program and end up testing a diluted, local variant of it. For NSW (Case C), fidelity would ask whether the *supported work* model — graduated stress, peer support, close supervision — was actually delivered at each site, or whether some sites reverted to ordinary unsupervised placements. Two sites reporting the same number of enrollees can be running two different programs.
 
-## The Paired t-Test
+Measuring fidelity usually means comparing an *intended* protocol against an *observed* one, using the primary-data tools of Chapter 4: structured observation, staff interviews with a common protocol, and monitoring records. The output is often a simple statement of what share of the design's core components were delivered as specified.
 
-When each unit is measured twice — before and after — the two measurements are *not* independent, and treating them as if they were throws away the most useful information you have. The paired t-test works on the within-unit differences $d_i = x_{i,\text{post}} - x_{i,\text{pre}}$, testing whether their mean differs from zero:
+## Dosage and Intensity
 
-$$t = \frac{\bar{d}}{s_d / \sqrt{n}}$$
+Fidelity asks whether the right things were done; **dosage** (or intensity) asks *how much* of the program each participant actually received. A job-training program delivered for two weeks is not a weaker version of the same program delivered for six months — it may be a different program entirely. For NSW (Case C), the design specified a period of subsidized work experience; the dosage question is whether enrollees actually received the intended months of work, or whether many left early, were placed late, or accumulated only a fraction of the planned hours. If the average enrollee received far less than the intended dose, then a modest earnings effect — recall the experimental contrast of **\$6,349** for treated workers versus **\$4,555** for controls, a **+\$1,794** difference — may understate what a fully delivered program would have produced.
 
-In Case B this is the natural follow-up — within the counties that adopted vote centers, did turnout rise from the election before adoption to the election after? Pairing controls for everything stable about each county (its size, its political culture, its baseline civic habits), because each county serves as its own comparison. That is its strength and its limit: a paired pre/post comparison with no untreated comparison group cannot rule out that *something else* changed statewide between the two elections.
+Dosage turns "treatment" from a yes/no switch into a quantity, and that quantity is frequently the missing variable that explains a disappointing outcome. A program can have high fidelity where it is delivered and still fail on dosage because too few sessions reached each person.
 
-> **Briefing:** Pair your data whenever the same units are measured twice. Using an independent-samples test on paired data is a common and costly error — it discards the pairing and usually inflates the standard error.
+> **Briefing:** Do not treat "received the program" as a binary. Measure the dose — hours, months, sessions, dollars — because a program delivered at a fraction of its intended intensity is a different program from the one on paper.
 
-## One-Way ANOVA for Three or More Groups
+## Reach and Coverage
 
-The team's suspicion — that turnout differs across small, mid-size, and large counties — is a three-group question. You might be tempted to run three separate t-tests (small vs. mid, mid vs. large, small vs. large), but each test carries its own chance of a false positive, and running several inflates the overall error rate. **One-way ANOVA** tests, in a single procedure, the null hypothesis that all group means are equal:
+Two more delivery questions concern *who* got the program. **Reach** is the number and profile of people or units the program actually served. **Coverage** is reach expressed against the eligible population — the share of those who were supposed to be served who actually were:
 
-$$H_0: \mu_1 = \mu_2 = \mu_3$$
+$$\text{Coverage rate} = \frac{\text{number served}}{\text{number eligible}}$$
 
-ANOVA works by comparing variation *between* groups to variation *within* groups, summarized in the F-statistic:
+A program can be delivered with perfect fidelity and full dosage to the people it reaches and still fail on coverage because it reaches only a small slice of its target population. MTO (Case D) is the standing example: winning the voucher lottery was not the same as moving, and take-up was only **partial** — many families offered a voucher never used it. From an impact standpoint the lottery is still clean, but from a coverage standpoint the program placed far fewer families in low-poverty neighborhoods than it offered to, and any account of MTO's effects that ignores partial take-up misreads what was actually delivered. Coverage also has a direction: a program that reaches an easy-to-serve subset while missing the harder-to-reach eligible units may post good-looking service numbers while leaving its actual mandate unmet.
 
-$$F = \frac{\text{MS}_{\text{between}}}{\text{MS}_{\text{within}}}$$
+> **Briefing:** Distinguish reach (whom you served) from coverage (what share of the eligible you served). A high count of participants can still be low coverage — and partial coverage, as in MTO's partial take-up, changes what an impact number even means.
 
-A large $F$ means the groups differ more from each other than members differ within their own group — evidence against the null. A significant ANOVA tells you that *some* groups differ, but not *which*; you follow up with post-hoc comparisons to locate the differences, adjusting for the multiple looks.
+## Service-Delivery and Monitoring Indicators
 
-> **Briefing:** Do not run many pairwise t-tests across several groups. Use ANOVA to ask the overall question first, then follow up — running k(k−1)/2 separate tests inflates your false-positive rate.
+Process evaluation runs on **monitoring indicators**: routine, repeated measures of delivery that track a program against its plan over time. These are the process-side counterpart to the outcome indicators of Chapter 4, and they usually come from the program's own administrative records — enrollment logs, service counts, attendance sheets, expenditure reports — read with the same skepticism Chapter 4 urged for any administrative source. Good monitoring indicators are tied directly to logic-model boxes: for Case A, incentive dollars allocated *and* firms contacted or recruited (not just dollars out the door); for Case B, vote centers opened, hours staffed, and publicity actions taken; for Case C, placements made and months of work delivered; for Case D, vouchers issued, counseling sessions held, and leases signed in low-poverty tracts; for Case E, days of preschool attended per child and weekly home visits completed — the dosage measures a small nonprofit reports to its funder every quarter.
 
-## Statistical vs. Practical Significance, and Effect Size
+The discipline is to define, for each indicator, a *planned* value and an *actual* value, and to watch the gap. A monitoring system that records only actuals — "9 vote centers opened" — cannot tell anyone whether that is success or failure; the same number is a triumph against a plan of 8 and a shortfall against a plan of 18.
 
-This is the heart of the chapter. A p-value confounds the *size* of a difference with the *size* of the sample. The MTO housing experiment (Case D) makes the magnitude side vivid: children who moved young earned about **\$3,477 more** as adults than the control group's mean of **\$11,270** — a roughly **31 percent** gain that is large enough to matter for policy on its own terms (Chetty, Hendren & Katz 2016). Contrast that with the metro/non-metro turnout gap, where, as we will see, a 0.026 difference across 254 counties does not even reach significance. The p-value alone cannot tell a decision-maker whether to act; effect size and policy judgment must accompany it.
+### Worked Example: A Delivery-Monitoring Table and Coverage Rate in Excel
 
-**Effect size** answers the "how big" question on a scale that does not depend on $n$. For comparing two means, **Cohen's d** expresses the difference in standard-deviation units:
+Process evaluation is more conceptual than computational, but a light monitoring table makes the logic concrete, and it is built with the same Excel you already know. Suppose — purely to illustrate the mechanics — that a county's vote-center rollout plan (Case B) specified a set of planned activities and outputs, and you have recorded what actually happened. Lay the plan and the actuals side by side and let a formula compute the delivery ratio.
 
-$$d = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}}$$
+Put the logic-model items in column A, the planned values in column B, the actuals in column C, and in column D compute `=C2/B2`, formatted as a percentage, then copy it down.
 
-Conventional, rough benchmarks are $d \approx 0.2$ (small), $0.5$ (medium), and $0.8$ (large) — but these are guidelines, and what counts as "large enough to matter" is ultimately a policy judgment about cost, equity, and stakes, not a statistical one.
+| Activity / Output | Planned | Actual | Delivery ratio (`=C/B`) |
+|---|---|---|---|
+| Vote-center locations opened | 12 | 9 | 75% |
+| Staffed operating days | 40 | 40 | 100% |
+| Publicity actions (mailers, notices) | 8 | 3 | 38% |
+| Poll-worker training sessions held | 6 | 6 | 100% |
 
-> **Briefing:** Always report an effect size alongside a p-value. "Significant" answers whether a difference is bigger than chance; effect size and policy judgment answer whether it is big enough to act on. Decision-makers need both.
+*(The planned and actual values above are illustrative placeholders, not recorded Case B figures — a template for the table, not a finding.)* Read down the ratio column and the story writes itself: staffing and training were delivered in full, but a quarter of the planned locations never opened and publicity was delivered at well under half the plan. A flat turnout result now has a candidate explanation — voters may never have learned that vote-anywhere polling existed — that no outcome number alone could have surfaced.
 
-### Worked Example: Metro vs. Non-Metro 2020 Turnout in Excel
+The same arithmetic yields a **coverage rate**. If a training program (Case C) was meant to serve an eligible pool and enrolled some fraction of it, `=served/eligible` returns coverage; if it enrolled 180 of 600 eligible workers, coverage is `=180/600`, or 30 percent — again illustrative values, shown only to demonstrate the calculation. Low coverage is not a rounding detail; it caps how much population-level change the program could possibly produce, no matter how well it works for those it reaches.
 
-Using the Case B county panel, we test whether 2020 turnout differs between metro and non-metro counties — the clean two-group comparison from the opening case.
+> **Briefing:** A monitoring table needs both a planned and an actual column. The delivery ratio and the coverage rate are one division each — trivial arithmetic that turns "we did some things" into an auditable account of what was delivered against what was promised.
 
-**1. Arrange the data.** Put the 86 metro counties' turnout in one column and the 168 non-metro counties' turnout in another (filter on `metro_status` and copy into two ranges).
+## Theory Failure vs. Implementation Failure
 
-**2. Run the test two ways.** For a quick p-value, use `=T.TEST(metro_range, nonmetro_range, 2, 3)` — the `2` requests a two-tailed test and the `3` requests the unequal-variance (Welch) version. For a full report, open **Data → Data Analysis → t-Test: Two-Sample Assuming Unequal Variances**, which returns both group means, both variances, the t-statistic, degrees of freedom, and the p-value in one table.
+Here is the payoff, and the single most important idea in the chapter. When a program does not produce the outcomes it hoped for, there are two fundamentally different explanations, and telling them apart is impossible without process data (Rossi, Lipsey & Henry 2019).
 
-**3. Read the result.** The ToolPak returns the means (0.554 and 0.580), a Welch t-statistic of about **−1.67**, and a two-tailed p-value of about **0.10**. Because 0.10 is *above* the conventional 0.05 threshold, you **fail to reject** the null: the metro/non-metro turnout difference is not statistically significant.
+**Theory failure** means the program was delivered as designed — good fidelity, adequate dosage, reasonable coverage — and *still* did not move the outcome. The activities happened; the assumed causal chain simply does not hold in the world. Here the logic model itself is wrong, and the right response is to rethink or abandon the program's theory of change.
 
-| Quantity | Excel source | Value (2020) |
-|---|---|---|
-| Mean turnout, metro (n = 86) | `AVERAGE` | 0.554 |
-| Mean turnout, non-metro (n = 168) | `AVERAGE` | 0.580 |
-| Difference (metro − non-metro) | subtraction | −0.026 |
-| Welch t-statistic | ToolPak / `T.TEST` | −1.67 |
-| p-value (two-tailed) | `T.TEST(...,2,3)` | ≈ 0.10 |
-| Decision at α = 0.05 | compare to 0.05 | Fail to reject |
+**Implementation failure** means the program's theory might be perfectly sound, but the outcome did not move because the program was never really delivered — locations never opened, doses fell short, the eligible went unserved. Here the idea was never actually tested, and abandoning it would be a mistake; the fix is in delivery, not design.
 
-Three teaching points follow. First, the difference is **small** — about 2.6 percentage points. Second, it is **not statistically significant** at the conventional 0.05 level (p ≈ 0.10), so we cannot rule out that it is sampling noise. Third, and most surprising, the sign is **negative**: non-metro (rural) counties turned out *slightly higher* than metro counties, the opposite of the common assumption that rural turnout lags. The honest conclusion is that metro and non-metro Texas counties turned out at statistically indistinguishable rates in 2020.
+A null impact finding is *identical* on the outcome side under both explanations, which is why you cannot interpret one without process evidence. Run the five cases through this lens:
 
-> **Returning to the Case:** The team now has a defensible answer to its opening question and a template for the rest of the vote-center evaluation. The metro-versus-non-metro comparison is an independent-samples (Welch) t-test, and it returns a small, non-significant, slightly-negative gap — a reminder that "we expected rural turnout to be lower" is a hypothesis to test, not a finding to assume. The natural next steps mirror the chapter: a paired t-test of turnout before versus after vote-center adoption within adopting counties, and a one-way ANOVA across small, mid-size, and large counties to see whether county size structures turnout. In every case the evaluation reports not just "significant or not," but how large the difference is and whether it justifies the policy — and here the difference is neither significant nor large.
+- **Case B (vote centers).** A flat turnout result is theory failure if vote centers were opened and publicized and voters still did not respond; it is implementation failure if, as the monitoring table above illustrates, locations went unopened and publicity was never delivered.
+- **Case C (NSW).** A weak earnings effect is theory failure if the full supported-work dose was delivered and earnings still did not rise; it is implementation failure if enrollees received only a fraction of the intended months of subsidized work.
+- **Case D (MTO).** A muted neighborhood effect is theory failure if families actually moved to low-poverty tracts and their circumstances still did not change; it is implementation failure to the extent that partial take-up meant many families never moved at all.
+- **Case A (EDC sales tax).** A disappointing jobs result is theory failure if incentives were genuinely deployed to recruit firms and firms still did not come; it is implementation failure if the tax revenue was disbursed without any real recruitment activity behind it.
+- **Case E (Perry Preschool).** A weak graduation effect would be theory failure if children attended the full daily preschool and weekly home-visit dose and still did not do better; it would be implementation failure if attendance was spotty or home visits went undelivered. For a small grant-funded nonprofit this is not academic: the funder's report must document dosage and fidelity precisely so that a disappointing outcome can be read correctly — and so a *good* outcome can be defended as the program's own.
+
+In every row, the outcome number cannot distinguish the two diagnoses. Only evidence about fidelity, dosage, reach, and coverage can.
+
+> **Briefing:** A null impact has two faces — the theory was wrong, or the program was never delivered. They demand opposite responses (drop the idea vs. fix delivery), and outcome data alone cannot tell them apart. Never interpret a null without process evidence.
+
+> **Returning to the Case:** The commissioners' question — "did vote centers not work?" — was unanswerable at the start of the chapter and is answerable now, but only with process evidence in hand. If the monitoring record shows vote centers opened on schedule, staffed, and publicized, then a flat turnout result points toward theory failure: for this county, vote-anywhere polling did not move turnout, consistent with the small, non-significant metro/non-metro gap Chapter 5 already found. If instead the record shows unopened locations and near-absent publicity, the honest report is that the program was never really delivered, the idea remains untested, and the recommendation is to fix the rollout before judging the concept. Same turnout number, opposite recommendations — and process evaluation is the only thing that decides between them.
 
 ## Common Pitfalls
 
-- **Reading the p-value as importance.** Significance is about chance, not magnitude. A tiny, useless difference can be "significant" in a large sample.
-- **Using an independent-samples test on paired data.** Pre/post on the same units is paired; treating it as independent discards the pairing.
-- **Assuming equal variances by default.** Prefer the Welch test unless you have a reason not to.
-- **Running many t-tests across several groups.** Use ANOVA first; pairwise tests inflate the false-positive rate.
-- **Reporting a test without an effect size.** A p-value with no Cohen's d leaves the decision-maker unable to judge whether to act.
-- **Forgetting baseline equivalence.** A significant between-group difference is not a program effect if the groups were not comparable to begin with.
+- **Interpreting a null impact without process data.** The cardinal error of the chapter: reading "no effect" as "the idea failed" when the program may never have been delivered.
+- **Counting outputs without a plan to compare against.** "9 vote centers opened" is meaningless until set beside the number planned; report actuals against targets, not alone.
+- **Treating treatment as a switch.** Recording who "received the program" as yes/no while ignoring dosage, which is often the variable that explains a weak effect.
+- **Confusing reach with coverage.** A large participant count can still be a small share of the eligible population; a program can look busy and cover almost no one.
+- **Assuming fidelity.** Presuming a program in the field matches the program on paper; drift is the rule, not the exception, and must be measured.
+- **Reporting process instead of impact — or impact instead of process.** They answer different questions. A delivery audit is not evidence of effect, and an effect estimate is not evidence of delivery. Decision-makers usually need both.
 
 ## Practice and Application
 
-1. **One-sample test.** Using the Case B 2020 panel, test whether mean turnout among non-metro counties (≈ 0.580, n = 168) differs from a benchmark of 0.60. Compute $t$ from `AVERAGE`, `STDEV.S`, and `COUNT`, then get the p-value with `T.DIST.2T`. Interpret in one sentence.
+1. **Logic model as checklist.** Take a logic model you built in Chapter 2 for any running case and convert it into a delivery checklist: for each activity and output box, write the monitoring indicator and the data source that would show it actually happened.
 
-2. **Independent-samples test.** Reproduce the worked example: run a Welch t-test of 2020 turnout in metro versus non-metro counties with both `T.TEST(...,2,3)` and the ToolPak. Confirm you recover means of 0.554 and 0.580, t ≈ −1.67, and p ≈ 0.10, and that the two approaches agree.
+2. **Fidelity vs. dosage.** For NSW (Case C), write one-sentence definitions of a fidelity question and a dosage question, and explain how a program could score high on one and low on the other.
 
-3. **Effect size.** For the comparison in Exercise 2, compute Cohen's d from the two means and the pooled SD. Classify it against the small/medium/large benchmarks and write two sentences on whether a difference this small — and non-significant — is practically meaningful.
+3. **Monitoring table (Excel).** Build a four-row planned-vs-actual monitoring table for one case, with a `=Actual/Planned` delivery-ratio column formatted as a percentage. Write two sentences interpreting the pattern of ratios, using clearly labeled illustrative values.
 
-4. **Paired test.** Using the Case B panel, run a paired t-test of county turnout in two consecutive presidential elections (e.g., 2016 and 2020) using the ToolPak's paired option. Explain why pairing is appropriate here and what it controls for.
+4. **Coverage rate (Excel).** For any case with an eligible population and a served count, compute a coverage rate with `=served/eligible`. Explain how partial coverage caps the program's possible population-level effect, using MTO's partial take-up (Case D) as the reference example.
 
-5. **One-way ANOVA.** Classify the 254 counties into three groups by population tercile and run **Data Analysis → ANOVA: Single Factor** on 2020 turnout. Report the F-statistic and p-value, state what a significant result does and does not tell you, and describe what follow-up you would run.
+5. **Theory vs. implementation failure.** Choose a running case, imagine it produced a null impact finding, and describe the specific process evidence you would gather to decide whether the null reflects theory failure or implementation failure. State what recommendation each diagnosis would imply.
+
+6. **Grant report on a shoestring (Case E).** You direct a small nonprofit running a Perry-style preschool on a foundation grant, with no evaluation staff. Design a one-page quarterly process report the funder would accept: choose three monitoring indicators (e.g., average days attended, home visits completed, share of enrolled children still active), give each a planned and an actual value in an Excel table with a delivery-ratio column, and write the two-sentence narrative you would send. Explain why reporting delivery honestly — even when a ratio is below plan — protects the program more than a polished outcomes-only summary.
 
 ## Transition to Chapter 7
 
-t-Tests and ANOVA compare group means but cannot, on their own, account for the baseline differences that Chapter 5 warned us about. When metro counties differ from non-metro counties on income, education, and population all at once, a simple mean comparison confounds the program with everything else that distinguishes the groups. Chapter 7 introduces regression, which lets us compare groups *while holding other characteristics constant* — the first tool in this course capable of isolating one factor's contribution from the tangle of others.
+Process evaluation establishes whether the program was delivered; the rest of the course returns to whether it worked, now on firmer ground. But the comparisons of Chapter 5 have a limit we have not yet solved: when treatment and comparison groups differ on income, education, and population all at once, a simple mean comparison confounds the program with everything else that distinguishes the groups — and knowing the program was faithfully delivered does not undo that confounding. Chapter 7 introduces regression, which lets us compare groups *while holding other characteristics constant*, isolating one factor's contribution from the tangle of others and setting up the quasi-experimental designs that follow.

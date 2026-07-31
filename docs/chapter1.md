@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 1"
+title: "Chapter 1: Introduction to Program Evaluation"
+nav_label: "Ch 1"
 permalink: /docs/chapter1/
 ---
 
-# Introduction to Program Evaluation
 
 ## Epigraphs
 
@@ -36,16 +36,17 @@ Public and nonprofit managers are accountable for results, not just effort. Legi
 
 > **Briefing:** Evaluation converts a program's *activity* into defensible claims about its *effect and value*, which is exactly what budget and policy decisions require.
 
-## Four Running Cases
+## Five Running Cases
 
-This book returns again and again to four real programs and their real data. They span the sectors a public manager actually works in, and each carries a different evaluation lesson.
+This book returns again and again to five real programs and their real data. They span the sectors a public manager actually works in, and each carries a different evaluation lesson.
 
 - **Case A — Texas Economic Development Sales Tax (city/local).** Texas cities may levy a Type A or Type B local sales tax dedicated to economic development. We use a real Texas city-finance panel of sales-tax allocations. In 2024, per-capita allocations across cities averaged **\$395** with a median of **\$276** and a standard deviation of **\$596** — a heavily right-skewed distribution. *Quasi-experimental, cost, and outcome questions.*
 - **Case B — Texas Countywide Vote Centers (county).** Some Texas counties let any registered voter cast a ballot at any vote center, rather than a single assigned precinct. We use a real Texas county political panel. In the 2020 election, turnout averaged **0.554** in metro counties versus **0.580** in non-metro counties (Welch *t* = −1.67, *p* ≈ 0.10). *Quasi-experimental and outcome questions.*
 - **Case C — National Supported Work Demonstration (state/workforce).** The job-training RCT of our opening case, using the public Dehejia–Wahba data. *The benchmark for impact evaluation and the cautionary tale of selection bias.*
 - **Case D — Moving to Opportunity (housing/HUD).** A federal experiment that used a **lottery** to offer some public-housing families a voucher to move to a lower-poverty neighborhood. Chetty, Hendren, and Katz (2016) found that children who moved young (before age 13) later earned about **\$3,477 (31%) more** per year in their mid-twenties than a control mean of **\$11,270**, and attended college at higher rates; take-up of the voucher was only partial. *A randomized design with the gap between offer and uptake at its center.*
+- **Case E — Perry Preschool (small nonprofit).** A preschool for **123 low-income children** run by a nonprofit, the HighScope Educational Research Foundation, which **randomly assigned** children to the program (n = 58) or a no-program comparison group (n = 65) and followed them for decades. High-school graduation was **65% vs. 45%** for the two groups (Schweinhart et al. 2005), and the program's famous cost-benefit result — roughly **\$16 returned per \$1 invested** — helped launch the case for early-childhood investment. *A small-N program showing that rigor does not require a big budget or a big sample.*
 
-> **Briefing:** Case C (NSW) and Case D (MTO) are randomized; Cases A and B are observational panels where we must *construct* a credible comparison. The contrast between them runs through the whole course.
+> **Briefing:** Cases C (NSW), D (MTO), and E (Perry) are randomized; Cases A and B are observational panels where we must *construct* a credible comparison. Case E adds a further lesson: even 123 people, well randomized, can settle a question — small samples widen the uncertainty, they do not forbid a credible answer. The contrast among these designs runs through the whole course.
 
 ## What Program Evaluation Is
 
@@ -95,6 +96,37 @@ A cross-cutting distinction concerns *purpose*. *Formative* evaluation is conduc
 
 Evaluation is never purely technical, because every program has *stakeholders* — people with a stake in the findings. For NSW these included the federal sponsors, the local sites that ran the work crews, the participants, and the taxpayers funding the wage subsidies; for a Texas economic-development sales tax (Case A) they include the city council, the development corporation, the recruited businesses, and the residents whose sales-tax dollars are at stake. Each may want different questions answered and may have a stake in a particular answer. A central professional obligation of the evaluator is to remain credible across these interests: to specify questions and methods *in advance*, to report what the data show even when it disappoints the program's champions, and to state limitations plainly. The evaluator serves the decision, not the program.
 
+## Scoping an Evaluation: The Charter
+
+Before choosing a method or touching data, a good evaluation is *scoped* — negotiated with the people who will use it, so the findings can actually inform a decision. The most common way a rigorous evaluation fails is not a bad estimate; it is a good estimate that arrives too late, answers a question no one was asking, or lands on a decision-maker who was never consulted and feels no ownership of it. A short **evaluation charter**, agreed at the outset, guards against this. It answers four questions, in writing, before any analysis begins:
+
+- **Who is the primary intended user?** Not "stakeholders" in the abstract, but the specific person or body who will act on the findings — the city council voting on the EDC-tax renewal (Case A), the HUD official deciding whether to expand vouchers (Case D). Naming a real user is what turns an evaluation from a report into a decision aid.
+- **What decision is pending, and when?** An evaluation is useful only if its findings arrive *before* the decision is made. A cost-benefit analysis of the sales tax that lands the week after the council's budget vote is worthless, however rigorous. Work backward from the decision date to a feasible timeline.
+- **What questions must be answered to inform that decision?** Tie each evaluation question — needs, process, outcome, impact, or cost, from the menu above — to what the user actually needs to know. A question whose answer would change no one's decision does not belong in the plan.
+- **What will be reported, and how — agreed in advance?** Specify the outcomes, the analyses, and the form of the final product *before* results exist. Settling the reporting rules up front protects the user (who knows what to expect) and the evaluator (who is then insulated from pressure to reshape the findings after they arrive — the same logic as the pre-analysis plans in Chapter 3).
+
+A charter is one page, not a contract, and it will evolve as you learn more. But writing it forces the conversation that most determines whether an evaluation is used: *who needs what answer, by when, and what will we tell them?* Sketching this charter for each of the five running cases is the first act of a real evaluation — and it is where the intended user stops being an audience you report *to* and becomes a partner you design *with*.
+
+> **Briefing:** Scope the evaluation *with* its intended user before you design it. "Who will act on this, and when?" shapes the study more than any statistical choice — and answering it late is a leading reason good evaluations go unused.
+
+## How to Read the Math in This Book
+
+This book uses a small amount of mathematical notation, and **every formula is paired with a plain-English reading**. The notation is never the point — it is shorthand for an idea you can say in words. Bookmark this page: whenever a symbol trips you up, translate it here first, then reread the sentence. The idea is always simpler than the symbols.
+
+| Symbol | Read it as… | Example |
+|---|---|---|
+| $$\bar{x}$$ | "x-bar" — the **average (mean)** of $$x$$ | $$\bar{x} = \$395$$: the average is \$395 |
+| $$\sum$$ | "**add up all** of these" | $$\sum x_i$$ — add up every $$x$$ value |
+| $$n$$ | the **number of observations** (rows in your data) | $$n = 254$$ counties |
+| $$x_i$$, $$Y_i$$ | the value **for one unit $$i$$** (a person, city, or county) | $$Y_i$$ — the outcome for worker $$i$$ |
+| $$E[\,\cdot\,]$$ | "the **average / expected value** of" whatever is in the brackets | $$E[Y]$$ — the average of $$Y$$ |
+| $$\mid$$  (vertical bar) | "**given** / **among**" | $$E[Y \mid D=1]$$ — the average of $$Y$$ *among the treated* |
+| $$\hat{\phantom{x}}$$  (a "hat") | "our **estimate** of" | $$\hat{\tau}$$ — our estimate of the effect $$\tau$$ |
+| Greek letters ($$\beta, \tau, \mu, \sigma$$) | just **names** for quantities: $$\beta$$/$$\tau$$ label effects or slopes; $$\mu$$ ("mu") is a true mean; $$\sigma$$ ("sigma") a true standard deviation | $$\tau$$ — the program's effect |
+| $$\sqrt{\phantom{x}}$$ | **square root** (Excel: `SQRT`) | $$\sqrt{n}$$ is `=SQRT(n)` |
+
+> **The one habit that makes the math painless:** read the plain-English line under a formula *first*, then look back at the symbols. Notation just makes an idea precise enough to compute in Excel; it is not a second language you must master to follow the argument.
+
 ## How Evaluation Differs from Monitoring and from Research
 
 Managers already produce *performance monitoring*: routine, ongoing tracking of indicators (enrollments this month, dollars spent). Monitoring is continuous, descriptive, and internally focused; it tells you whether the dashboard is green. Evaluation is episodic, explanatory, and judgment-oriented; it asks *why* the dashboard looks the way it does and *whether* the program deserves to continue. Monitoring tells you NSW enrolled 185 workers into its treatment crews; evaluation tells you whether the program raised their earnings by \$1,794.
@@ -137,6 +169,7 @@ Both rows describe the *same* treated workers earning the *same* \$6,349 in 1978
 3. **Formative or summative?** A development corporation wants to know which of two business-recruitment pitches fills more applications (Case A); HUD wants to know whether to expand housing vouchers nationally based on the MTO results (Case D). Classify each request and identify its audience.
 4. **County panel (Excel).** Open the Texas County Panel (Case B). Pick a single county and chart its turnout across the 2000–2024 presidential years using **Insert → Line Chart**. In a short paragraph, explain why this trend illustrates the counterfactual problem: if the county adopted vote centers in 2016, why can't this chart alone show their impact on turnout?
 5. **Distinguish the disciplines.** In one paragraph each, describe how performance monitoring, basic research, and program evaluation would each approach the City Finance Panel's sales-tax allocations (Case A; 2024 mean \$395, median \$276) differently.
+6. **Draft an evaluation charter.** For one of the five running cases, write a one-page charter answering the four scoping questions: name the *primary intended user* (a specific person or body), the *pending decision and its deadline*, the *two or three questions* whose answers would inform that decision, and *what you would report, and how*, agreed in advance. Then, in two sentences, explain how naming a real user — rather than "stakeholders" — changed what you would choose to measure.
 
 ## Transition to Chapter 2
 

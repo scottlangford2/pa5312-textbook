@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 3"
+title: "Chapter 3: Evaluation Questions, Designs, and Causal Inference"
+nav_label: "Ch 3"
 permalink: /docs/chapter3/
 ---
 
-# Evaluation Questions, Designs, and Causal Inference
 
 ## Epigraphs
 
@@ -42,19 +42,19 @@ A well-posed evaluation question names four things: the *program* (the treatment
 
 ## The Counterfactual and Potential Outcomes
 
-The modern way to make "caused" precise is the *potential-outcomes framework*. For each unit $i$ (here, a worker in NSW) consider two potential outcomes:
+The modern way to make "caused" precise is the *potential-outcomes framework*. For each unit $$i$$ (here, a worker in NSW) consider two potential outcomes:
 
 $$
 Y_i(1) = \text{earnings if worker } i \text{ gets the program}, \qquad Y_i(0) = \text{earnings if not.}
 $$
 
-The *causal effect of the program for worker $i$* is the difference between these two potential worlds:
+The *causal effect of the program for worker $$i$$* is the difference between these two potential worlds:
 
 $$
 \tau_i = Y_i(1) - Y_i(0).
 $$
 
-Here is the difficulty, which Holland (1986) called the *fundamental problem of causal inference*: for any given worker we observe only **one** of these. A treated worker reveals $Y_i(1)$; his $Y_i(0)$ — what he would have earned without the program — is forever unobserved. That missing quantity is the *counterfactual*. We can never measure an individual effect $\tau_i$ directly.
+Here is the difficulty, which Holland (1986) called the *fundamental problem of causal inference*: for any given worker we observe only **one** of these. A treated worker reveals $$Y_i(1)$$; his $$Y_i(0)$$ — what he would have earned without the program — is forever unobserved. That missing quantity is the *counterfactual*. We can never measure an individual effect $$\tau_i$$ directly.
 
 What we can hope to estimate is an *average* effect across a group, the *average treatment effect*:
 
@@ -62,19 +62,21 @@ $$
 \text{ATE} = E[\,Y_i(1) - Y_i(0)\,] = E[\,Y_i(1)\,] - E[\,Y_i(0)\,].
 $$
 
-Estimating the ATE requires a credible stand-in for the unobserved $E[Y_i(0)]$ — a comparison group whose outcomes approximate what the treated group would have earned without treatment. In NSW, the experiment's control group estimates $E[Y_i(0)]$ as \$4,555; the CPS comparison group estimates it as \$14,847. Both are candidate stand-ins for the *same* missing quantity, and only the randomized one is credible. Every design in this chapter is, at bottom, a different strategy for constructing that stand-in.
+Estimating the ATE requires a credible stand-in for the unobserved $$E[Y_i(0)]$$ — a comparison group whose outcomes approximate what the treated group would have earned without treatment. In NSW, the experiment's control group estimates $$E[Y_i(0)]$$ as \$4,555; the CPS comparison group estimates it as \$14,847. Both are candidate stand-ins for the *same* missing quantity, and only the randomized one is credible. Every design in this chapter is, at bottom, a different strategy for constructing that stand-in.
 
 > **Briefing:** A program's effect is the difference between two potential outcomes, one of which is never observed; the comparison group is our estimate of the missing counterfactual.
 
 ## Selection Bias
 
-Why not simply compare the treated workers to the CPS comparison group? Because the two groups differ for reasons unrelated to the program. Decompose the naive difference in observed outcomes between treated ($D=1$) and untreated ($D=0$) groups:
+Why not simply compare the treated workers to the CPS comparison group? Because the two groups differ for reasons unrelated to the program. Decompose the naive difference in observed outcomes between treated ($$D=1$$) and untreated ($$D=0$$) groups:
 
 $$
 \underbrace{E[Y_i \mid D=1] - E[Y_i \mid D=0]}_{\text{naive comparison}} = \underbrace{E[Y_i(1) - Y_i(0) \mid D=1]}_{\text{effect on the treated}} + \underbrace{\big(E[Y_i(0) \mid D=1] - E[Y_i(0) \mid D=0]\big)}_{\text{selection bias}}.
 $$
 
-The second term is *selection bias*: the difference in the *untreated* potential outcome between the groups. NSW makes the term concrete. The disadvantaged men who entered the program would have earned far less, even without it, than a general-population CPS sample: $E[Y_i(0)\mid D=1] \approx \$4{,}555$ (the experimental control), while the CPS comparison sits around \$14,847, so $E[Y_i(0)\mid D=0] \approx \$14{,}847$. The selection-bias term is therefore strongly *negative* — roughly $\$4{,}555 - \$14{,}847 = -\$10{,}292$ — and it swamps the true \$1,794 effect, dragging the naive estimate all the way to −\$8,498. Selection bias is not a flaw in arithmetic; it is a flaw in *whom we are comparing*. The whole art of design is making the selection-bias term go to zero, or bounding it. Randomization, as in NSW and MTO (Case D), forces it to zero by construction.
+The second term is *selection bias*: the difference in the *untreated* potential outcome between the groups. NSW makes the term concrete. The disadvantaged men who entered the program would have earned far less, even without it, than a general-population CPS sample: $$E[Y_i(0)\mid D=1] \approx \$4{,}555$$ (the experimental control), while the CPS comparison sits around \$14,847, so $$E[Y_i(0)\mid D=0] \approx \$14{,}847$$. The selection-bias term is therefore strongly *negative* — roughly $$\$4{,}555 - \$14{,}847 = -\$10{,}292$$ — and it swamps the true \$1,794 effect, dragging the naive estimate all the way to −\$8,498. Selection bias is not a flaw in arithmetic; it is a flaw in *whom we are comparing*. The whole art of design is making the selection-bias term go to zero, or bounding it. Randomization, as in NSW and MTO (Case D), forces it to zero by construction.
+
+One term above deserves a name: $$E[Y_i(1) - Y_i(0) \mid D=1]$$ is the average effect *on the treated* (the **ATT**), which can differ from the average effect on *everyone* (the **ATE**) whenever the treated would respond differently from the untreated — as a self-selected, severely disadvantaged group like NSW's trainees plausibly would. Randomization collapses the two at once: it drives the selection-bias term to zero *and*, by making the treated a random draw from the population, makes the ATT equal the ATE. Most quasi-experimental designs recover only the treated-group effect, which is why later chapters flag difference-in-differences and regression-discontinuity estimates as *local* — to the treated group, or to units right at the cutoff.
 
 > **Briefing:** A naive treated-minus-untreated comparison equals the true effect *plus* selection bias; credible designs are the ones that eliminate or bound that bias term.
 
@@ -102,7 +104,7 @@ Designs form a rough ladder of causal credibility. The right rung depends on the
 
 ### Experimental Designs
 
-In a *randomized controlled trial (RCT)*, units are assigned to treatment or control *by chance*. Randomization makes the two groups equivalent in expectation on *everything* — observed and unobserved — so $E[Y_i(0)\mid D=1] = E[Y_i(0)\mid D=0]$ and the selection-bias term vanishes. NSW (Case C) and MTO (Case D) are both RCTs: NSW randomized individual workers into the subsidized-work program, and MTO used a lottery to allocate housing vouchers. This is why their estimates — the +\$1,794 and the \$3,477 young-mover earnings gain — are the benchmark for internal validity (Gertler et al., 2016, build their entire impact-evaluation toolkit around this point). The limits are practical and ethical: you cannot randomize whether a Texas city levies an economic-development sales tax (Case A) or whether a county opens vote centers (Case B). MTO also shows the practical wrinkle of *partial take-up* — randomizing the *offer* is not the same as randomizing the *treatment received*, which forces the intention-to-treat versus treatment-on-the-treated distinction.
+In a *randomized controlled trial (RCT)*, units are assigned to treatment or control *by chance*. Randomization makes the two groups equivalent in expectation on *everything* — observed and unobserved — so $$E[Y_i(0)\mid D=1] = E[Y_i(0)\mid D=0]$$ and the selection-bias term vanishes. NSW (Case C), MTO (Case D), and Perry Preschool (Case E) are all RCTs: NSW randomized individual workers into the subsidized-work program, MTO used a lottery to allocate housing vouchers, and the Perry study randomly assigned 123 children to preschool or no preschool. This is why their estimates — the +\$1,794, the \$3,477 young-mover earnings gain, and Perry's 20-point graduation gap — are the benchmark for internal validity (Gertler et al., 2016, build their entire impact-evaluation toolkit around this point). The limits are practical and ethical: you cannot randomize whether a Texas city levies an economic-development sales tax (Case A) or whether a county opens vote centers (Case B). MTO also shows the practical wrinkle of *partial take-up* — randomizing the *offer* is not the same as randomizing the *treatment received*, which forces the intention-to-treat versus treatment-on-the-treated distinction. Perry adds the *small-sample* lesson: randomizing only 123 children still zeroes out selection bias, so the design is internally sound — but with so few units the estimate carries wide uncertainty, and its external validity leans on replication in later studies rather than on a large sample.
 
 ### Quasi-Experimental Designs
 
@@ -121,7 +123,7 @@ We can reproduce LaLonde's famous result in a few cells and watch the selection-
 In Excel, lay out the three group means and build up both estimates plus the decomposition:
 
 - Treated mean in **B2** (`6349`), experimental control in **B3** (`4555`), CPS comparison in **B4** (`14847`).
-- **Experimental effect** in **B6**: `=B2-B3` — the trustworthy estimate, because randomization makes the control a valid $E[Y_i(0)]$.
+- **Experimental effect** in **B6**: `=B2-B3` — the trustworthy estimate, because randomization makes the control a valid $$E[Y_i(0)]$$.
 - **Naive observational estimate** in **B7**: `=B2-B4`.
 - **Selection bias** in **B8**: `=B3-B4` — the difference in the *untreated potential outcome* between the two candidate comparison groups.
 - Verify the identity in **B9**: `=B7-(B6+B8)`, which should return exactly `0`. (Naive = true effect + selection bias.)
@@ -138,7 +140,17 @@ In Excel, lay out the three group means and build up both estimates plus the dec
 
 The arithmetic of the decomposition is exact: the naive −\$8,498 is the true +\$1,794 effect *plus* a selection-bias term of −\$10,292. The bias term is not noise; it is the predictable consequence of comparing a deeply disadvantaged treated group to a general-population survey. Randomization is what set that term to zero in the experiment. Dehejia and Wahba (1999) then showed that with careful matching on observed pre-program characteristics, the nonexperimental data could be coaxed back toward the experimental +\$1,794 — a preview of Chapter 7.
 
-> **Returning to the Case:** The \$10,000 mistake was never about the treated workers' \$6,349; it was about the counterfactual. Naming the estimand ($E[Y_i(0)]$ for the treated), recognizing that the CPS comparison estimates it at \$14,847 while the randomized control estimates it at \$4,555, and choosing the credible comparison turns a number that condemns the program into one that vindicates it. That choice — not the outcome data — is the evaluator's central act.
+> **Returning to the Case:** The \$10,000 mistake was never about the treated workers' \$6,349; it was about the counterfactual. Naming the **estimand** — the precise quantity you are trying to estimate, here $$E[Y_i(0)]$$ for the treated (what the trainees *would have* earned without the program) — recognizing that the CPS comparison estimates it at \$14,847 while the randomized control estimates it at \$4,555, and choosing the credible comparison turns a number that condemns the program into one that vindicates it. That choice — not the outcome data — is the evaluator's central act.
+
+## The Credibility Revolution and Research Transparency
+
+The NSW story — where the same data yield either a helpful or a harmful program depending on choices the analyst makes — is exactly why the empirical social sciences spent the last two decades raising their standards for what counts as credible evidence. Angrist and Pischke (2010) called this the *credibility revolution*: a shift away from elaborate modeling toward research *designs* whose assumptions are transparent and defensible, of the kind this chapter has laid out. For a practicing evaluator, the lesson is not just to pick a good design but to work in a way that lets others check it.
+
+Three professional norms now travel with credible evidence. First, **pre-registration and pre-analysis plans**: before seeing the outcome data, serious analysts write down the questions they will ask, the comparisons they will make, and the outcomes they will report. This guards against the very human temptation to keep trying comparison groups until one gives a pleasing answer — the NSW result is a permanent reminder of how much the choice of comparison can move an estimate. Second, **replication and open data and code**: the raw data and the exact steps from data to result are shared so that a skeptical reader can reproduce the number. The NSW–CPS data became a canonical teaching set precisely because LaLonde, then Dehejia and Wahba, made it available for others to re-analyze. Third, **honest reporting of magnitude and uncertainty**: report the *effect size* and its *confidence interval* — a range like "+\$1,794, plausibly between roughly \$550 and \$3,000" — rather than fixating on whether an estimate earns a statistical-significance "star." The American Statistical Association's formal statement on p-values (Wasserstein and Lazar, 2016) warns bluntly that statistical significance is not the same as practical importance and should never be the sole basis for a decision. A tiny, policy-irrelevant effect can be "significant" in a large sample, and a decision-relevant effect can miss the threshold in a small one.
+
+These are expectations for *producing* credible work and for *consuming* it. When you read an evaluation, ask: was the analysis planned in advance or fished from the data? Can the result be reproduced? Does the author report how big the effect is and how uncertain, or hide behind a single asterisk? An evaluator who cannot answer these questions about her own work — or a study she is asked to trust — has not finished the job.
+
+> **Briefing:** Credible evidence now comes with professional habits: plan the analysis before seeing outcomes, share data and code so others can reproduce it, and report effect sizes with confidence intervals instead of chasing significance stars.
 
 ## Common Pitfalls
 
@@ -150,7 +162,7 @@ The arithmetic of the decomposition is exact: the naive −\$8,498 is the true +
 
 ## Practice and Application
 
-1. **Define the effect.** For NSW (Case C), write the potential outcomes $Y_i(1)$ and $Y_i(0)$ in words for a single worker, and explain in one sentence why $\tau_i$ can never be observed directly.
+1. **Define the effect.** For NSW (Case C), write the potential outcomes $$Y_i(1)$$ and $$Y_i(0)$$ in words for a single worker, and explain in one sentence why $$\tau_i$$ can never be observed directly.
 2. **Decompose the bias (Excel).** Recreate the worked-example block from the three NSW means. Confirm the identity in **B9** returns 0, then write two sentences explaining why the selection-bias term is so large and negative for the NSW–CPS comparison.
 3. **Name the threats.** List the five classic internal-validity threats and give a concrete example of each drawn from NSW (Case C), vote centers (Case B), or the EDC sales tax (Case A).
 4. **County panel selection bias (Excel).** Using the Texas County Panel (Case B), compare mean 2020 turnout in metro versus non-metro counties with an `AVERAGEIF` formula (you should find roughly 0.554 vs. 0.580). Explain why this difference is *not* the causal effect of being metro on turnout, identifying at least one confounder.

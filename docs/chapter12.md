@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 12"
+title: "Chapter 12: Communicating Findings, Ethics, and the Evaluation Report"
+nav_label: "Ch 12"
 permalink: /docs/chapter12/
 ---
 
-# Communicating Findings, Ethics, and the Evaluation Report
 
 ## Epigraphs
 
@@ -17,7 +17,7 @@ You have spent the term analyzing the **National Supported Work (NSW)** job-trai
 
 Now you have twenty minutes on a workforce board's agenda and a five-page memo limit. The board members are a retired schoolteacher, a small-business owner, two attorneys, and a software engineer — none of them statisticians. The board's chair has already told a reporter she expects the evaluation to "prove the program is a success." One member, skeptical of the whole effort, is looking for any reason to cut its funding. Your beautifully specified regression means nothing to this audience until you can explain what it found, how confident they should be, and what they should do about it.
 
-The hardest part is not the analysis you already finished. It is deciding how to present a result that is *positive but contingent* — strong on the earnings effect, genuinely uncertain on whether benefits beat costs — and resisting the pull, from the chair's office and from your own pride, to overstate it. Throughout this chapter we will draw on all four programs you have studied — NSW job training, the MTO housing-voucher lottery, a Texas economic-development sales tax, and Texas countywide vote centers — as running examples of how to report honestly.
+The hardest part is not the analysis you already finished. It is deciding how to present a result that is *positive but contingent* — strong on the earnings effect, genuinely uncertain on whether benefits beat costs — and resisting the pull, from the chair's office and from your own pride, to overstate it. Throughout this chapter we will draw on all five programs you have studied — NSW job training, the MTO housing-voucher lottery, a Texas economic-development sales tax, Texas countywide vote centers, and the Perry Preschool nonprofit — as running examples of how to report honestly.
 
 **Guiding Questions**
 
@@ -46,12 +46,13 @@ Decision-makers read top-down and stop early. Structure the report so the most i
 
 Every estimate carries uncertainty, and every design carries threats to validity. Reporting them is not a confession of weakness; it is the core of professional honesty. State confidence intervals or margins of error in words a layperson grasps: "Our best estimate is that job training raised annual earnings by about \$1,794, and a range of plausible values surrounds that figure." Distinguish *statistical* uncertainty (sampling noise) from *design* threats (selection bias, attrition, spillovers from earlier chapters) — a tight confidence interval around a biased estimate is precise *and* wrong. The NSW case is the most vivid warning of all: a *naive* comparison of trainees to a survey sample put the effect at roughly **−\$8,498**, a confidently wrong number whose error was selection, not sampling. The randomized estimate of **+\$1,794** is believable not because its interval is tight but because the *design* removed the bias.
 
-The four cases also illustrate the different limitations you must name honestly:
+The five cases also illustrate the different limitations you must name honestly:
 
 - **NSW (RCT):** the strongest design, but report partial relevance to today's labor market and that benefits beat costs for *some* subgroups (e.g., long-term welfare recipients) more than others.
 - **MTO (RCT with partial take-up):** report the gap between **intention-to-treat** and **treatment-on-the-treated** — many offered families never moved — and note that the large earnings gains (about 31%) accrued to children who moved *young*, not to all participants.
 - **Texas economic-development sales tax (city):** a quasi-experimental design; name the comparison-city assumption and the risk that adopting cities differ from non-adopters in unobserved ways.
 - **Texas countywide vote centers (county):** name spillovers and the difficulty of separating the policy's effect from concurrent changes in turnout or administration.
+- **Perry Preschool (small-N RCT):** the randomization is sound, but report the **wide uncertainty** that comes with only 123 children, and that a small, intensive 1960s program may not generalize — the case for scaling rests on **replication**, not on this one study alone.
 
 > **Briefing:** A confidence interval describes sampling noise only; it says nothing about whether your design has eliminated selection bias. Report both kinds of uncertainty, and never let a small p-value substitute for a credible design — NSW's −\$8,498 artifact is the cautionary tale.
 
@@ -83,7 +84,7 @@ You want one chart comparing 1978 earnings for the NSW treatment and control arm
 
 | Group | 1978 earnings | Margin of error |
 |---|---|---|
-| Treatment | \$6,349 | $\pm \$1{,}000$ |
+| Treatment | \$6,349 | $$\pm \$1{,}000$$ |
 | Control | \$4,555 | — |
 
 The chart makes the roughly \$1,794 gap obvious while the error bar quietly reminds the board that the exact size is uncertain — clarity and honesty in a single image.
@@ -130,13 +131,13 @@ The professional standard is simple and strict: **AI assists drafting; it never 
 
 1. **Executive summary.** Write a one-page executive summary of the NSW job-training evaluation for the workforce board: question, headline finding (+\$1,794 earnings effect) with its uncertainty, and a recommendation, in plain language with no equations.
 2. **Honest chart.** Using the worked-example NSW data (\$6,349 vs. \$4,555 with a \$1,000 margin of error), build the clustered bar chart in Excel with a zero-based axis, custom error bars, and direct data labels. Then build a deliberately *misleading* version (truncated axis, no error bars) and write two sentences explaining how each choice changes the reader's impression.
-3. **Limitations section.** Pick one of the four course cases (NSW, MTO, the Texas economic-development sales tax, or Texas countywide vote centers) and draft a limitations paragraph that names two specific threats to validity and states honestly what each means for the conclusion.
+3. **Limitations section.** Pick one of the five course cases (NSW, MTO, the Texas economic-development sales tax, Texas countywide vote centers, or Perry Preschool) and draft a limitations paragraph that names two specific threats to validity and states honestly what each means for the conclusion. (For Perry, the small sample and the generalizability of a 1960s program are the natural two.)
 4. **Standards application.** Take a realistic dilemma — a sponsor asks you to report only MTO's overall average and drop the finding that the gains were concentrated among children who moved young — and explain which Joint Committee standards are in tension and how you would resolve it.
 5. **AI verification log.** Suppose an AI tool drafts a paragraph claiming "the MTO experiment raised participants' earnings by 31%" and cites "Chetty, Hendren, and Katz (2016)." Write the checklist of verification steps you would perform — including what the 31% figure actually refers to (which children, measured when) — before either the number or the citation could appear in your report.
 
 ## Conclusion: Becoming a Critical Producer and Consumer of Evidence
 
-Over thirteen weeks you have built a complete evaluator's toolkit. You learned to specify what a program is supposed to do and how to measure whether it does it. You learned the difference between a correlation and a cause, and the family of designs — from randomized controlled trials through difference-in-differences and matching to careful regression — that let you defend a causal claim or, just as importantly, admit when you cannot. The real programs you studied made those lessons concrete: the **MTO** housing-voucher lottery showed how random assignment turns a neighborhood "effect" into a credible cause and why partial take-up forces us to separate the offer from the move; the **NSW** job-training experiment showed, in a single sign-flipping contrast, that a randomized +\$1,794 and a naive −\$8,498 cannot both be right; the **Texas economic-development sales tax** and **Texas countywide vote centers** showed how quasi-experimental designs reach for the same counterfactual without the luxury of a lottery. You learned to ask not only whether a program works but whether it is worth its cost, discounting future dollars and confronting your own assumptions through sensitivity analysis. And in this final chapter you learned to carry all of that into a room full of decision-makers and deliver it clearly, honestly, and ethically.
+Over thirteen weeks you have built a complete evaluator's toolkit. You learned to specify what a program is supposed to do and how to measure whether it does it. You learned the difference between a correlation and a cause, and the family of designs — from randomized controlled trials through difference-in-differences and matching to careful regression — that let you defend a causal claim or, just as importantly, admit when you cannot. The real programs you studied made those lessons concrete: the **MTO** housing-voucher lottery showed how random assignment turns a neighborhood "effect" into a credible cause and why partial take-up forces us to separate the offer from the move; the **NSW** job-training experiment showed, in a single sign-flipping contrast, that a randomized +\$1,794 and a naive −\$8,498 cannot both be right; **Perry Preschool** showed that a nonprofit randomizing just 123 children can still produce credible, policy-moving evidence — and the field's most famous cost-benefit result; and the **Texas economic-development sales tax** and **Texas countywide vote centers** showed how quasi-experimental designs reach for the same counterfactual without the luxury of a lottery. You learned to ask not only whether a program works but whether it is worth its cost, discounting future dollars and confronting your own assumptions through sensitivity analysis. And in this final chapter you learned to carry all of that into a room full of decision-makers and deliver it clearly, honestly, and ethically.
 
 Throughout, your tool was Microsoft Excel — `AVERAGEIF` and the Regression dialog, the `NPV` function and What-If Data Tables, clustered bar charts with honest error bars. The tool was deliberately humble, because the point was never the software. The point was *judgment*: knowing which question a method can answer, how much to trust a number, and when to say "the evidence does not support that claim."
 

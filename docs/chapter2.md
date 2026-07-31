@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 2"
+title: "Chapter 2: Program Theory and Logic Models"
+nav_label: "Ch 2"
 permalink: /docs/chapter2/
 ---
 
-# Program Theory and Logic Models
 
 ## Epigraphs
 
@@ -100,15 +100,31 @@ The resulting model for **MTO (Case D)**, in compact form:
 
 Now *critique* it. The jump from a voucher (an output) to a child's adult earnings two decades later (an impact) crosses two whole columns of slow-moving outcomes — a long chain whose front end (take-up, neighborhood poverty) and back end (earnings) move on completely different timescales, which is exactly why Kling, Liebman, and Katz (2007) saw mental-health gains but limited short-run economic effects while Chetty, Hendren, and Katz (2016) saw the earnings payoff only once the children grew up. "Voucher take-up" correctly sits in *outputs*, not outcomes — being offered or even using a voucher is something the program did, not the life-trajectory change it ultimately seeks.
 
-The same five-column discipline applies to the other three running cases:
+The same five-column discipline applies to the other four running cases:
 
 | Case | Inputs → Activities | Outputs | Outcomes | Impacts |
 |------|---------------------|---------|----------|---------|
 | **A — EDC sales tax** | Dedicated sales-tax revenue → fund incentives, recruit firms | Incentive dollars allocated (2024 mean \$395/capita) | New/retained business activity | Jobs created, net city revenue |
 | **B — Vote centers** | County election budget → open any-location vote centers | Vote centers operating; ballots cast anywhere | Lower cost/convenience of voting | Higher turnout (2020 metro 0.554 vs. non-metro 0.580) |
 | **C — NSW** | Wage-subsidy funds → place workers in subsidized jobs | Months of subsidized work delivered | Skills, work habits, experience | Higher unsubsidized earnings (+\$1,794) |
+| **E — Perry Preschool** | Foundation/grant funds → daily preschool + weekly home visits | Preschool sessions delivered; 58 children enrolled | School readiness; IQ ≥ 90 at age 5 (67% vs. 28%) | High-school graduation (65% vs. 45%); higher earnings; less crime |
 
 > **Returning to the Case:** Once MTO is laid out as a grid, HUD's question answers itself: the program can defend its *outputs* (vouchers issued, take-up rate) and its *short-term outcomes* (neighborhood poverty, parental mental health), but its headline claim — higher adult earnings — sits at the far right of a long chain that only a randomized control group and twenty years of follow-up could credibly establish. The lottery design is precisely what let MTO instrument that far-right box. A program that promised the same impact without the lottery, or without measuring children into adulthood, would be claiming an effect it could never see.
+
+## Is the Program Ready to Be Evaluated? Evaluability Assessment
+
+Not every program is ready for a full evaluation, and commissioning one anyway is a common, expensive mistake. An **evaluability assessment** is a short, front-end study — usually a few weeks — that asks whether an impact or outcome evaluation is *worth doing yet*. It sits between the evaluation charter of Chapter 1 (what does the user need to know?) and the design choices of Chapter 3 (how will we find out?), and it uses the logic model as its main diagnostic tool. Wholey, who introduced the technique in the 1970s, framed it as protecting everyone's money: an evaluation that cannot succeed should be caught *before* the field budget is spent, not after.
+
+An evaluability assessment poses four practical questions:
+
+- **Is the program's theory coherent?** Does a defensible logic model connect activities to the claimed outcomes, or does the chain leap from a voucher to adult earnings with no neighborhood-exposure box in between? A program built on a broken theory cannot be rescued by a clever design.
+- **Is the program actually implemented as designed?** A vote-center rollout (Case B) that exists on paper but opened few locations, or an EDC sales tax (Case A) whose funds were never disbursed, has no "treatment" to evaluate. Evaluating a program that never really ran produces a null result that means nothing.
+- **Are the intended outcomes defined and measurable?** Every box on the right side of the model needs an indicator and a plausible data source. MTO's far-right earnings box was measurable only because administrative earnings records could be linked two decades out; a program promising "stronger communities" with no indicator is not yet evaluable.
+- **Will the intended users actually use the results?** If the decision has effectively been made, or no one is positioned to act on the findings, even a flawless evaluation is wasted. This is the charter's "primary intended user" question, asked again with money on the table.
+
+When an assessment answers "no," the deliverable is not an evaluation but a set of *fixes*: sharpen the logic model, wait until implementation stabilizes, add the missing indicators, or re-engage the decision-maker. Only when the four answers are "yes" is the program ready for the designs of Chapters 3 and 8.
+
+> **Briefing:** Before you evaluate, check that the program *can* be evaluated — coherent theory, real implementation, measurable outcomes, and a user who will act. An evaluability assessment catches the un-winnable study before its budget is spent.
 
 ## Common Pitfalls
 
@@ -120,11 +136,12 @@ The same five-column discipline applies to the other three running cases:
 
 ## Practice and Application
 
-1. **Build a logic model (Excel).** Choose one of the four running cases — NSW (C), MTO (D), the Texas EDC sales tax (A), or countywide vote centers (B) — and build a five-column logic model using the Excel steps above. Add a second sheet listing two assumptions and two external factors specific to that case.
+1. **Build a logic model (Excel).** Choose one of the five running cases — NSW (C), MTO (D), the Texas EDC sales tax (A), countywide vote centers (B), or Perry Preschool (E) — and build a five-column logic model using the Excel steps above. Add a second sheet listing two assumptions and two external factors specific to that case.
 2. **Critique a chain.** For your model, identify the single weakest link and explain, in a paragraph, why the program's overall plausibility is capped by it. (For MTO, consider whether the weakest link is the *take-up* output or the *neighborhood-to-earnings* outcome.)
 3. **Indicators (Excel).** Add a sixth column to your model. For each outcome and impact box, write one concrete indicator and the data source you would use to measure it. Flag any box for which no data currently exist.
 4. **From boxes to questions.** Translate three links in your model into three evaluation questions, and label each as process, outcome, or impact (drawing on Chapter 1).
 5. **County panel application (Excel).** A county adopts countywide vote centers (Case B) in 2016. Open the Texas County Panel and use a PivotTable (**Insert → PivotTable**) to summarize turnout before and after 2016 for that county. Then explain which boxes of the vote-center logic model the turnout variable could serve as an indicator for — and which it cannot.
+6. **Evaluability assessment.** For one running case, work through the four evaluability questions: Is the theory coherent? Is the program implemented as designed? Are the intended outcomes defined and measurable? Will an intended user act on the results? Give each a yes/no/uncertain verdict with one sentence of justification, and conclude with a recommendation — *proceed to a full evaluation now*, or *fix X first*. State which single weakness, if any, would most cheaply move a "no" to a "yes."
 
 ## Transition to Chapter 3
 

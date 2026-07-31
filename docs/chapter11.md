@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Chapter 11"
+title: "Chapter 11: Cost-Benefit and Cost-Effectiveness Analysis"
+nav_label: "Ch 11"
 permalink: /docs/chapter11/
 ---
 
-# Cost-Benefit and Cost-Effectiveness Analysis
 
 ## Epigraphs
 
@@ -43,23 +43,23 @@ Avoid counting *transfers* — pure redistributions like a welfare check that ta
 
 ## The Time Value of Money: Discounting and NPV
 
-A benefit received in year 10 is worth less than the same benefit today, because today's dollar could be invested and grow. To compare costs and benefits arriving in different years, we *discount* each future amount back to its present value using a discount rate $r$. The present value of an amount $B_t$ received in year $t$ is:
+A benefit received in year 10 is worth less than the same benefit today, because today's dollar could be invested and grow. To compare costs and benefits arriving in different years, we *discount* each future amount back to its present value using a discount rate $$r$$. The present value of an amount $$B_t$$ received in year $$t$$ is:
 
 $$PV = \frac{B_t}{(1+r)^t}$$
 
-The **Net Present Value** of a program with net benefits $NB_t = B_t - C_t$ in each year $t$ from $0$ to $T$ is:
+The **Net Present Value** of a program with net benefits $$NB_t = B_t - C_t$$ in each year $$t$$ from $$0$$ to $$T$$ is:
 
 $$NPV = \sum_{t=0}^{T} \frac{B_t - C_t}{(1+r)^t}$$
 
-> **Briefing:** The decision rule is simple — undertake the program if $NPV > 0$, and when ranking competing programs under a fixed budget, prefer higher NPV.
+> **Briefing:** The decision rule is simple — undertake the program if $$NPV > 0$$, and when ranking competing programs under a fixed budget, prefer higher NPV.
 
 A related summary is the **benefit-cost ratio (BCR)**, the present value of benefits divided by the present value of costs:
 
 $$BCR = \frac{\sum_{t=0}^{T} B_t / (1+r)^t}{\sum_{t=0}^{T} C_t / (1+r)^t}$$
 
-A program is worthwhile when $BCR > 1$. NPV tells you the *magnitude* of net value; BCR tells you the value *per dollar spent*. They can disagree when ranking: a large program may have a higher NPV but a lower BCR than a small, efficient one. For a fixed budget, BCR helps you squeeze the most value per dollar; for an absolute go/no-go decision, NPV is the cleaner guide.
+A program is worthwhile when $$BCR > 1$$. NPV tells you the *magnitude* of net value; BCR tells you the value *per dollar spent*. They can disagree when ranking: a large program may have a higher NPV but a lower BCR than a small, efficient one. For a fixed budget, BCR helps you squeeze the most value per dollar; for an absolute go/no-go decision, NPV is the cleaner guide.
 
-The discount rate $r$ is the most contested input. A higher rate punishes distant benefits more harshly — bad news for programs like job training or MTO whose earnings payoffs accrue years into the future. There is no single "correct" rate, which is precisely why we test several (below).
+The discount rate $$r$$ is the most contested input. A higher rate punishes distant benefits more harshly — bad news for programs like job training or MTO whose earnings payoffs accrue years into the future. There is no single "correct" rate, which is precisely why we test several (below).
 
 ## Cost-Effectiveness Analysis When Benefits Resist Dollars
 
@@ -77,6 +77,20 @@ Every CBA rests on assumptions: the discount rate, the size of the effect, how l
 
 > **Briefing:** A finding that survives a wide range of reasonable assumptions is credible; one that flips when the discount rate moves a point or two should be reported as fragile.
 
+## Perry Preschool: The Field's Most Famous Cost-Benefit Result (Case E)
+
+No cost-benefit result has moved public policy more than Perry Preschool's, and it illustrates every idea in this chapter at once. The nonprofit spent about **\$15,166 per child** (constant 2000 dollars, 3% discount rate) on one or two years of preschool. Followed to age 40, the program group did better on outcome after outcome; when the analysts valued those differences in dollars and discounted them back, the estimated return to society was about **\$244,812 per child — roughly \$16 for every \$1 invested** (Schweinhart et al. 2005). To the public budget alone (taxpayers, setting aside the participant's private gains) the return was about **\$12.90 per \$1**.
+
+Three features make Perry the ideal teaching case for honest CBA:
+
+- **Most of the benefit is non-market.** About **88%** of the public return — roughly **\$171,473 per child** — came not from higher taxes on higher earnings but from **reduced crime**: fewer arrests, trials, incarcerations, and victim costs. This is the valuation problem of the chapter made concrete. A CBA that counted only earnings would have missed seven-eighths of the program's value, and pricing the crime savings requires defensible assumptions that a skeptic can inspect — exactly the kind of number to expose to sensitivity analysis.
+- **The long horizon makes discounting decisive.** Perry's benefits accrue over *forty years*; its costs are paid in the first two. A higher discount rate punishes those distant benefits hard, so the choice of $$r$$ is not a technicality — it moves the headline. This is why the result is always reported *with* its rate (3%), not as a bare ratio.
+- **It survives a tougher reanalysis.** Heckman and colleagues (2010) re-estimated the return with methods that correct for the study's small-sample and randomization quirks and attach **standard errors** — and still found a **7–10% annual social rate of return**, roughly **\$7–\$12 per \$1**. The point estimate fell, but the conclusion — benefits comfortably exceed costs — held. A finding that survives a hostile reanalysis is exactly the "robust to reasonable assumptions" result the sensitivity-analysis section prized.
+
+The lesson for a public manager is not that every preschool returns \$16 on the dollar — Perry was a small, intensive, well-run program, and later at-scale programs show smaller effects. It is that a rigorous CBA, built on a credible impact estimate and honest about its discount rate and its non-market valuations, can make the case for a program more persuasively than any outcome table alone.
+
+> **Briefing:** Perry shows CBA at its most powerful and most demanding: the headline (\$16 per \$1) rests on valuing non-market benefits (mostly avoided crime), on a stated discount rate over a 40-year horizon, and on an effect that survived a skeptical reanalysis. Report all three, or the ratio is a sales pitch.
+
 ### Worked Example: Was NSW Worth It? A Cost-Benefit Model in Excel
 
 We model one NSW participant over six years. We anchor the analysis on the **real, experimentally estimated benefit**: participants earned about **\$1,794 more per year** than randomized controls (the +\$1,794 effect from Chapter 10). We treat that earnings gain as a benefit stream that persists for the first several years after the program.
@@ -85,17 +99,20 @@ The program's *cost* is where we must be careful. We will **not** invent a preci
 
 All figures below are in dollars. We lay out one column per year in Excel.
 
-| Year $t$ | Costs $C_t$ | Benefits $B_t$ | Net $NB_t$ |
-|---|---|---|---|
-| 0 | 8,000 | 0 | $-8{,}000$ |
-| 1 | 0 | 1,794 | 1,794 |
-| 2 | 0 | 1,794 | 1,794 |
-| 3 | 0 | 1,794 | 1,794 |
-| 4 | 0 | 1,794 | 1,794 |
-| 5 | 0 | 1,794 | 1,794 |
-| 6 | 0 | 1,794 | 1,794 |
+| Year $$t$$ | Costs $$C_t$$ | Benefits $$B_t$$ | Net $$NB_t$$ | PV of net at 5% |
+|---|---|---|---|---|
+| 0 | 8,000 | 0 | $$-8{,}000$$ | −8,000.00 |
+| 1 | 0 | 1,794 | 1,794 | 1,708.57 |
+| 2 | 0 | 1,794 | 1,794 | 1,627.21 |
+| 3 | 0 | 1,794 | 1,794 | 1,549.72 |
+| 4 | 0 | 1,794 | 1,794 | 1,475.93 |
+| 5 | 0 | 1,794 | 1,794 | 1,405.65 |
+| 6 | 0 | 1,794 | 1,794 | 1,338.72 |
+| **Total** | | | | **+1,105.79** |
 
-**Step 1 — Lay out the cash flows.** Put years in row 1, costs in row 2, benefits in row 3, and net benefits in row 4 with `=B3-B2` dragged across.
+The last column discounts each year's net benefit by $$(1+r)^t$$ at $$r = 5\%$$ — e.g., year 3 is $$1{,}794 / (1.05)^3 = 1{,}549.72$$. Its **sum is +\$1,106**, which *is* the NPV. This is the number you can confirm by hand, not just take on faith from Excel's `NPV` function; the two agree exactly.
+
+**Step 1 — Lay out the cash flows.** Put years in row 1, costs in row 2, benefits in row 3, and net benefits in row 4 with `=B3-B2` dragged across. To reproduce the present-value column above, add a row with `=B4/(1+$B$8)^B1` dragged across, and sum it — it returns the same +\$1,106.
 
 **Step 2 — Compute NPV.** Excel's `NPV` function discounts a stream *beginning one period in the future*, so it must not include the year-0 value inside the function — add year 0 separately. With the rate in cell `B8` (say 5%), net benefits for years 1–6 in `C4:H4`, and year 0 in `B4`:
 
@@ -107,12 +124,12 @@ At 5% this returns about **+\$1,106** — positive, so on these (real benefit, i
 
 **Step 4 — Sensitivity table.** Build a one-variable **Data Table** (Data ▸ What-If Analysis ▸ Data Table) that recomputes NPV as the discount rate runs from 2% to 12%. List the rates down a column, point the table at your NPV formula, and Excel fills in the NPV at each rate in one step.
 
-| Discount rate $r$ | NPV (\$) |
+| Discount rate $$r$$ | NPV (\$) |
 |---|---|
 | 2% | 2,049 |
 | 5% | 1,106 |
 | 8% | 293 |
-| 12% | $-624$ |
+| 12% | $$-624$$ |
 
 At low and moderate discount rates the program is a net positive; at high rates the later earnings benefits are discounted too heavily to cover the up-front cost. The break-even rate lies near **9%**.
 
@@ -135,6 +152,7 @@ At low and moderate discount rates the program is a net positive; at high rates 
 3. **Sensitivity Data Table.** Build a one-variable Data Table varying the discount rate from 1% to 15%. Identify the break-even rate (near 9% on these figures) and write two sentences on what that implies about how robust the "worth it" conclusion is.
 4. **Cost-effectiveness vs. cost-benefit.** Explain in a short paragraph why MTO's main benefits (a child's improved life trajectory, safer surroundings) are better handled with cost-effectiveness analysis than with a single monetized cost-benefit figure, and propose one natural-unit ratio you could report for MTO.
 5. **City finance application.** Using the Texas city finance panel, propose a small local program (e.g., a downtown facade-improvement grant) whose benefits show up as higher future sales-tax revenue. Sketch a five-year cost-benefit table, clearly label any cost figure you assume rather than measure, name the discount rate you would use, and explain one benefit you would *not* attempt to monetize.
+6. **Interrogate the \$16 (Case E).** Perry Preschool reports a societal benefit-cost ratio of about \$16 per \$1, of which roughly 88% is reduced-crime value. (a) In one paragraph, explain why the choice of discount rate matters so much for a program whose benefits span 40 years but whose costs fall in the first two. (b) The independent Heckman et al. (2010) reanalysis lands at roughly \$7–\$12 per \$1. Explain why the *lower* estimate arguably makes the case *more* persuasive to a skeptical council, not less. (c) Name one benefit in the crime-savings figure that you would flag for sensitivity analysis, and say why.
 
 ## Transition to Chapter 12
 
