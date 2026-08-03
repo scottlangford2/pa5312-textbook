@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Path diagram: the program X affects the outcome Y (the effect of interest). An omitted confounder Z affects both X and Y, opening a back-door path that biases the estimate if Z is left out.">
   <style>
-    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
-    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
-    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .node { font: 700 15px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1a1a1a; }
-    .sub  { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #6b6b6b; }
-    .elab { font: 600 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "Helvetica Neue", Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .node { font: 700 15px "Helvetica Neue", Arial, sans-serif; fill: #1a1a1a; }
+    .sub  { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #6b6b6b; }
+    .elab { font: 600 12.5px "Helvetica Neue", Arial, sans-serif; }
+    .src  { font: 400 11px "Helvetica Neue", Arial, sans-serif; fill: #9a9a9a; }
   </style>
 
   <rect x="24" y="14" width="34" height="5" fill="#501214"/>

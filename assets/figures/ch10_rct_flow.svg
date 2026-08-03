@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Flow diagram of a randomized trial: an eligible population is randomly assigned to a treatment group that gets the program or a control group that does not; comparing their outcomes gives the causal effect.">
   <style>
-    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
-    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
-    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .bt   { font: 700 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .bd   { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .edge { font: 600 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #501214; }
-    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "Helvetica Neue", Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .bt   { font: 700 13.5px "Helvetica Neue", Arial, sans-serif; }
+    .bd   { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .edge { font: 600 12px "Helvetica Neue", Arial, sans-serif; fill: #501214; }
+    .src  { font: 400 11px "Helvetica Neue", Arial, sans-serif; fill: #9a9a9a; }
     .box  { fill: #ffffff; stroke: #cfc3c4; stroke-width: 1.3; }
     .boxm { fill: #f7f1f0; stroke: #501214; stroke-width: 1.5; }
   </style>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Horizontal bars of average 1978 earnings: treated $6,349, randomized control $4,555, CPS survey comparison $14,847. The experiment compares treated to the control (+$1,794); the naive comparison uses the CPS group and gets −$8,498.">
   <style>
-    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
-    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
-    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .rlab { font: 600 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3a3a3a; }
-    .val  { font: 700 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .ann  { font: 600 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "Helvetica Neue", Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .rlab { font: 600 13px "Helvetica Neue", Arial, sans-serif; fill: #3a3a3a; }
+    .val  { font: 700 13px "Helvetica Neue", Arial, sans-serif; }
+    .ann  { font: 600 12.5px "Helvetica Neue", Arial, sans-serif; }
+    .src  { font: 400 11px "Helvetica Neue", Arial, sans-serif; fill: #9a9a9a; }
   </style>
 
   <rect x="24" y="14" width="34" height="5" fill="#501214"/>

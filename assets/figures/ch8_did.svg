@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Difference-in-differences line chart of full-time-equivalent fast-food employment: New Jersey rose from 20.44 to 21.03 while Pennsylvania fell from 23.33 to 21.17. The New Jersey counterfactual falls to 18.28, so the difference-in-differences is +2.76.">
   <style>
-    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
-    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
-    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .val  { font: 700 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .ax   { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #7a7a7a; }
-    .axb  { font: 600 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #4b4b4b; }
-    .leg  { font: 600 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "Helvetica Neue", Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .val  { font: 700 12.5px "Helvetica Neue", Arial, sans-serif; }
+    .ax   { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #7a7a7a; }
+    .axb  { font: 600 12.5px "Helvetica Neue", Arial, sans-serif; fill: #4b4b4b; }
+    .leg  { font: 600 12px "Helvetica Neue", Arial, sans-serif; }
+    .src  { font: 400 11px "Helvetica Neue", Arial, sans-serif; fill: #9a9a9a; }
   </style>
 
   <rect x="24" y="14" width="34" height="5" fill="#501214"/>

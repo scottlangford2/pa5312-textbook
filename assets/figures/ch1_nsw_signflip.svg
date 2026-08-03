@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 510" role="img" aria-label="Bar chart: the National Supported Work program's estimated effect on 1978 earnings is a credible +$1,794 against the randomized control group, but −$8,498 against a naive survey comparison.">
   <style>
-    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
-    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
-    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .val  { font: 700 19px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .grp  { font: 600 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3a3a3a; }
-    .sub  { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #7a7a7a; }
-    .ax   { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #7a7a7a; }
-    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "Helvetica Neue", Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "Helvetica Neue", Arial, sans-serif; fill: #5b5b5b; }
+    .val  { font: 700 19px "Helvetica Neue", Arial, sans-serif; }
+    .grp  { font: 600 13px "Helvetica Neue", Arial, sans-serif; fill: #3a3a3a; }
+    .sub  { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #7a7a7a; }
+    .ax   { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #7a7a7a; }
+    .src  { font: 400 11px "Helvetica Neue", Arial, sans-serif; fill: #9a9a9a; }
   </style>
 
   <!-- house-style header: maroon tab, kicker, serif headline, dek -->
