@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Four target diagrams contrasting reliability and validity: low reliability with scattered shots, high reliability with tight clusters, and validity shown by whether the shots centre on the bullseye.">
   <style>
-    .kick { font: 600 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #5E1A24; }
-    .head { font: 700 20px Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif; fill: #121212; }
-    .dek  { font: 400 13.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .colh { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #3a3a3a; }
-    .rowh { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5E1A24; }
-    .src  { font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
+    .colh { font: 600 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3a3a3a; }
+    .rowh { font: 600 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #501214; }
+    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
     .ring { fill: none; stroke: #d8d8d8; stroke-width: 1.3; }
-    .shot { fill: #5E1A24; }
+    .shot { fill: #501214; }
   </style>
 
-  <rect x="24" y="14" width="34" height="5" fill="#5E1A24"/>
+  <rect x="24" y="14" width="34" height="5" fill="#501214"/>
   <text x="24" y="44" class="kick">MEASUREMENT &#183; CH 4</text>
   <text x="24" y="72" class="head">Validity and reliability are not the same</text>
   <text x="24" y="94" class="dek">Reliability is consistency (a tight cluster); validity is hitting what you mean to measure (the centre)</text>

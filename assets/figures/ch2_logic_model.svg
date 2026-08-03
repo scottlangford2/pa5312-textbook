@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="A logic model shown left to right: inputs, activities, outputs, outcomes, impacts. Inputs, activities and outputs are what the program does; outcomes and impacts are the change it causes. Each arrow is an assumption.">
   <style>
-    .kick { font: 600 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #5E1A24; }
-    .head { font: 700 20px Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif; fill: #121212; }
-    .dek  { font: 400 13.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .stage{ font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5E1A24; }
-    .ex   { font: 400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #6b6b6b; }
-    .brk  { font: 600 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #3a3a3a; }
-    .note { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #7a7a7a; }
-    .src  { font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #9a9a9a; }
-    .box  { fill: #f7f1f0; stroke: #5E1A24; stroke-width: 1.3; }
+    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
+    .stage{ font: 700 14px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #501214; }
+    .ex   { font: 400 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #6b6b6b; }
+    .brk  { font: 600 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3a3a3a; }
+    .note { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #7a7a7a; }
+    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .box  { fill: #f7f1f0; stroke: #501214; stroke-width: 1.3; }
   </style>
 
-  <rect x="24" y="14" width="34" height="5" fill="#5E1A24"/>
+  <rect x="24" y="14" width="34" height="5" fill="#501214"/>
   <text x="24" y="44" class="kick">PROGRAM THEORY &amp; LOGIC MODELS &#183; CASE D</text>
   <text x="24" y="72" class="head">A logic model reads left to right</text>
   <text x="24" y="94" class="dek">Each arrow is an assumption that can fail</text>
@@ -50,8 +50,8 @@
   <!-- brackets -->
   <path d="M24,204 L24,212 L442,212 L442,204" fill="none" stroke="#9a9a9a" stroke-width="1.4"/>
   <text x="233" y="230" text-anchor="middle" class="brk">What the program <tspan font-style="italic">does</tspan></text>
-  <path d="M465,204 L465,212 L736,212 L736,204" fill="none" stroke="#5E1A24" stroke-width="1.6"/>
-  <text x="600" y="230" text-anchor="middle" class="brk" fill="#5E1A24">The change it <tspan font-style="italic">causes</tspan></text>
+  <path d="M465,204 L465,212 L736,212 L736,204" fill="none" stroke="#501214" stroke-width="1.6"/>
+  <text x="600" y="230" text-anchor="middle" class="brk" fill="#501214">The change it <tspan font-style="italic">causes</tspan></text>
 
   <text x="380" y="258" text-anchor="middle" class="note">The distance between the two brackets is what an impact evaluation must bridge.</text>
   <text x="24" y="290" class="src">Illustrative: Moving to Opportunity (Case D).</text>

@@ -9,16 +9,19 @@
    accent (TXST maroon, used where The Economist uses red); sentence case;
    data/UI (tables, nav, code) stays sans. */
 
-$maroon: #5E1A24;
-$maroon-dk: #7a2230;
-$ink: #121212;
-$serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
-$sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+/* Tokens shared with scottlangford.com (the house-style source of truth). */
+$maroon: #501214;
+$maroon-dk: #3d0e10;
+$ink: #1a1a1a;
+$cream: #faf8f5;
+$serif: 'Spectral', Georgia, "Palatino Linotype", Palatino, serif;
+$sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
-/* Serif, justified body. */
+/* Serif, justified body on warm cream (matches the personal site). */
 body {
   font-family: $serif;
   color: $ink;
+  background-color: $cream;
 }
 .page-content {
   p,
@@ -51,7 +54,7 @@ a, a:visited { color: $maroon; }
 a:hover { color: $maroon-dk; }
 
 /* Site header: serif title, sans nav, maroon top rule (the Economist tab). */
-.site-header { border-top: 3px solid $maroon; }
+.site-header { border-top: 3px solid $maroon; background-color: $cream; }
 .site-title, .site-title:visited {
   font-family: $serif;
   font-weight: 700;
@@ -62,16 +65,20 @@ a:hover { color: $maroon-dk; }
   font-family: $sans;
   color: $ink;
 }
+.site-nav { background-color: $cream; }
 
 /* Data/UI stays sans; code stays monospace. */
 table, th, td { font-family: $sans; font-size: 0.95em; }
-th { background: #f5efee; color: $maroon; text-align: left; }
+th { background: #f1e7e6; color: $maroon; text-align: left; }
 
 /* Blockquotes (Briefing boxes, epigraphs): maroon rule. */
 blockquote {
   border-left: 3px solid $maroon;
   color: #333;
 }
+
+/* Footer matches the cream surface. */
+.site-footer { background-color: $cream; }
 
 /* --- Figures --- */
 figure.fig {
@@ -95,31 +102,6 @@ figure.fig {
     .fig-label {
       font-weight: 600;
       color: $maroon;
-    }
-  }
-}
-
-/* --- Figures --- */
-figure.fig {
-  margin: 1.8em 0;
-  text-align: center;
-
-  svg,
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  figcaption {
-    margin-top: 0.6em;
-    font-size: 0.9em;
-    color: #555;
-    text-align: left;
-    line-height: 1.4;
-
-    .fig-label {
-      font-weight: 600;
-      color: #5E1A24; /* TXST maroon */
     }
   }
 }

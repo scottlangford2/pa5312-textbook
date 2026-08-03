@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Line chart: net present value of the NSW cost-benefit model falls from about +$2,049 at a 2 percent discount rate to about −$624 at 12 percent, crossing zero near a 9 percent break-even rate.">
   <style>
-    .kick { font: 600 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #5E1A24; }
-    .head { font: 700 20px Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif; fill: #121212; }
-    .dek  { font: 400 13.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5b5b5b; }
-    .val  { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5E1A24; }
-    .ax   { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #7a7a7a; }
-    .axb  { font: 600 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #4b4b4b; }
-    .mk   { font: 600 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #5E1A24; }
-    .src  { font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #9a9a9a; }
+    .kick { font: 600 11.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: .08em; fill: #501214; }
+    .head { font: 700 20px Spectral, Georgia, "Palatino Linotype", serif; fill: #1a1a1a; }
+    .dek  { font: 400 13.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5b5b5b; }
+    .val  { font: 700 13px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #501214; }
+    .ax   { font: 400 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #7a7a7a; }
+    .axb  { font: 600 12.5px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #4b4b4b; }
+    .mk   { font: 600 12px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #501214; }
+    .src  { font: 400 11px "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #9a9a9a; }
   </style>
 
-  <rect x="24" y="14" width="34" height="5" fill="#5E1A24"/>
+  <rect x="24" y="14" width="34" height="5" fill="#501214"/>
   <text x="24" y="44" class="kick">COST-BENEFIT ANALYSIS &#183; CASE C</text>
   <text x="24" y="72" class="head">Net present value falls as the discount rate rises</text>
   <text x="24" y="94" class="dek">NSW cost-benefit model, net present value by discount rate</text>
@@ -22,7 +22,7 @@
     <line x1="60" y1="400"   x2="600" y2="400"/>
   </g>
   <!-- zero line emphasised -->
-  <line x1="60" y1="312.5" x2="600" y2="312.5" stroke="#121212" stroke-width="1.2"/>
+  <line x1="60" y1="312.5" x2="600" y2="312.5" stroke="#1a1a1a" stroke-width="1.2"/>
 
   <!-- right-hand axis labels -->
   <text x="612" y="141" class="ax">$2,000</text>
@@ -31,12 +31,12 @@
   <text x="612" y="404" class="ax">&#8722;$1,000</text>
 
   <!-- break-even marker (maroon dashed, ~9.3%) -->
-  <line x1="439" y1="137.5" x2="439" y2="312.5" stroke="#5E1A24" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <line x1="439" y1="137.5" x2="439" y2="312.5" stroke="#501214" stroke-width="1.4" stroke-dasharray="4 4"/>
   <text x="445" y="150" class="mk">break-even &#8776; 9%</text>
 
   <!-- NPV line -->
-  <polyline points="123,133 253,216 383,287 557,367" fill="none" stroke="#5E1A24" stroke-width="2.5" stroke-linejoin="round"/>
-  <g fill="#5E1A24">
+  <polyline points="123,133 253,216 383,287 557,367" fill="none" stroke="#501214" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#501214">
     <circle cx="123" cy="133" r="4.5"/>
     <circle cx="253" cy="216" r="4.5"/>
     <circle cx="383" cy="287" r="4.5"/>
