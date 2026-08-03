@@ -53,6 +53,11 @@ $$\widehat{\text{ATE}} = \bar{Y}_{\text{treatment}} - \bar{Y}_{\text{control}}$$
 
 That last clause is the magic. Matching and regression can only balance variables you have data on. Randomization balances *everything*, including unobserved motivation, family support, and a parent's drive to find a safer block — the very things that make families who already live in low-poverty neighborhoods a misleading comparison group. In MTO, the lottery is what lets us treat the control families' later outcomes as a credible picture of how the experimental families' children *would have* fared had they not been offered the chance to move.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch10_rct_flow.svg' | relative_url }}" alt="Flow diagram of a randomized trial: an eligible population is randomized into a treatment group and a control group, and their outcomes are compared to give the causal effect.">
+<figcaption><span class="fig-label">Figure 10.1.</span> The logic of a randomized trial. Chance assignment makes the treatment and control groups comparable in expectation — on everything, measured and unmeasured — so the difference in their outcomes is the program's causal effect.</figcaption>
+</figure>
+
 ### Designing an RCT
 
 A credible experiment has a few non-negotiable parts:

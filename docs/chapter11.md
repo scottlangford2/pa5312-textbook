@@ -133,6 +133,11 @@ At 5% this returns about **+\$1,106** — positive, so on these (real benefit, i
 
 At low and moderate discount rates the program is a net positive; at high rates the later earnings benefits are discounted too heavily to cover the up-front cost. The break-even rate lies near **9%**.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch11_npv_curve.svg' | relative_url }}" alt="Line chart of net present value against the discount rate: about +2,049 dollars at 2 percent, falling through +1,106 at 5 percent and +293 at 8 percent to about minus 624 dollars at 12 percent, crossing zero near a 9 percent break-even rate.">
+<figcaption><span class="fig-label">Figure 11.1.</span> Net present value of the NSW cost-benefit model as the discount rate varies. The program stays a net positive across the usual public discount rates and turns negative only near the break-even rate of about 9%. Plotting the whole curve — rather than reporting a single rate — is the one-variable sensitivity check that separates a credible CBA from a sales pitch.</figcaption>
+</figure>
+
 > **Returning to the Case:** You can tell the workforce board that, under these figures, NSW is a *net positive investment across the usual range of public discount rates*, with a benefit-cost ratio around 1.14 at 5% and a break-even near 9%. Two honesty caveats belong in the same breath. First, the **benefit is the real experimental estimate** (+\$1,794/year), but the **\$8,000 cost is an illustrative placeholder** — your bottom line moves with the true program cost, which is why you report the break-even rate and run the sensitivity table. Second, the published NSW evaluations found that benefits exceeded costs for some target groups — notably long-term welfare recipients — while the case was weaker for others; a credible report would present results *by subgroup* rather than a single all-in verdict (LaLonde 1986; Dehejia and Wahba 1999). And where a benefit cannot be honestly priced at all — as with MTO's neighborhood effects — you would switch to the cost-effectiveness framing and let the board compare dollars-per-outcome across competing programs directly.
 
 ## Common Pitfalls

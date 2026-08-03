@@ -70,6 +70,11 @@ $$\rho_{XX} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}$$
 
 When $$\sigma^2_E$$ is large — inconsistent reporting, sloppy data entry, definitional drift — reliability falls toward zero and the indicator becomes mostly noise.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch4_validity_reliability.svg' | relative_url }}" alt="Four target diagrams: low and high reliability crossed with low and high validity, shown as scattered or tight clusters that do or do not centre on the bullseye.">
+<figcaption><span class="fig-label">Figure 4.1.</span> Reliability versus validity. Reliability is a tight cluster (consistency); validity is centring on the true target. A measure can be highly reliable yet invalid — precisely and consistently wrong (top right) — which is why the two properties must be checked separately.</figcaption>
+</figure>
+
 ## Levels of Measurement
 
 The arithmetic you are allowed to do depends on the variable's level of measurement. Confusing these levels is one of the most common errors in student evaluations.

@@ -129,6 +129,11 @@ In every row, the outcome number cannot distinguish the two diagnoses. Only evid
 
 > **Returning to the Case:** The commissioners' question — "did vote centers not work?" — was unanswerable at the start of the chapter and is answerable now, but only with process evidence in hand. If the monitoring record shows vote centers opened on schedule, staffed, and publicized, then a flat turnout result points toward theory failure: for this county, vote-anywhere polling did not move turnout, consistent with the small, non-significant metro/non-metro gap Chapter 5 already found. If instead the record shows unopened locations and near-absent publicity, the honest report is that the program was never really delivered, the idea remains untested, and the recommendation is to fix the rollout before judging the concept. Same turnout number, opposite recommendations — and process evaluation is the only thing that decides between them.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch6_theory_vs_implementation.svg' | relative_url }}" alt="Decision diagram: an outcome that did not move branches on whether the program was delivered as designed into theory failure or implementation failure.">
+<figcaption><span class="fig-label">Figure 6.1.</span> A null outcome has two very different explanations. Process evidence — was the program actually delivered, at the intended dose and reach? — is the only thing that decides between a wrong theory (rethink the program) and a broken rollout (fix the delivery).</figcaption>
+</figure>
+
 ## Common Pitfalls
 
 - **Interpreting a null impact without process data.** The cardinal error of the chapter: reading "no effect" as "the idea failed" when the program may never have been delivered.

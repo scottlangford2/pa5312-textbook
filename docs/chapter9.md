@@ -32,6 +32,11 @@ These two situations call for two distinct designs. The drinking-age threshold i
 
 Many of the most consequential public interventions arrive at a known moment (a law's effective date, a campaign launch) or are assigned by a sharp rule (an eligibility score, a population threshold that triggers a mandate). When you can pin down that moment or that threshold, you gain causal leverage that ordinary regression cannot match — because the *timing* or the *rule* is plausibly unrelated to everything else driving the outcome. Interrupted time series and regression discontinuity are the two designs that exploit this structure. They are powerful precisely where difference-in-differences struggles: when there is no good comparison group, or when assignment follows a bright administrative line.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch9_its_rd.svg' | relative_url }}" alt="Two schematic panels: an interrupted time series with a level jump at the intervention, and a regression discontinuity with a jump at a cutoff.">
+<figcaption><span class="fig-label">Figure 9.1.</span> Two sharp designs. An interrupted time series looks for a break in a trend at the moment of intervention; a regression discontinuity compares units just above and just below a cutoff. Both approximate an experiment locally, and both require a sharp, non-manipulated rule.</figcaption>
+</figure>
+
 ## Interrupted Time Series
 
 ### Modeling a Level and Slope Change

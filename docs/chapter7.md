@@ -116,6 +116,11 @@ where $$\delta$$ is the slope from regressing the omitted $$W$$ on the treatment
 
 This is the deep reason regression adjustment is not equivalent to a randomized experiment. Randomization makes the treated and untreated groups statistically identical on *everything* — measured and unmeasured — so there are no systematically omitted variables. Regression can only balance the variables you can name and measure. Latent motivation, prior labor-market attachment, local economic shocks, and unrecorded eligibility rules all remain potential confounders. This is exactly why the Case B turnout model's small set of controls — and its low $$R^2$$ — cannot rescue a vote-center comparison from selection: the counties that adopt vote centers may differ from those that do not in ways income and education never capture. Shadish, Cook, and Campbell (2002) call this the central trade-off of observational work: you can adjust for what you observe, but you must argue, not assume, that nothing important is left out.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch7_ovb.svg' | relative_url }}" alt="Path diagram: program X affects outcome Y, while an omitted confounder Z affects both, creating a back-door path.">
+<figcaption><span class="fig-label">Figure 7.1.</span> Omitted-variable bias. Regression estimates the effect of the program (X) on the outcome (Y), but an unmeasured confounder (Z) that affects both opens a back-door path. Controlling only for what you measured leaves Z in the estimate — which is why adjustment is not the same as randomization.</figcaption>
+</figure>
+
 ## Common Pitfalls
 
 - **Treating $$R^2$$ as a measure of causal success.** A model can have a high $$R^2$$ and a hopelessly biased treatment coefficient (Case A's allocation model fits at $$R^2 \approx 0.94$$ yet identifies nothing causal), and a low $$R^2$$ like Case B's 0.08 does not make its real associations wrong. Judge the design, not the fit.

@@ -58,6 +58,11 @@ The convention is that inputs and activities are within the program's control; o
 
 > **Briefing:** Inputs → activities → outputs → outcomes → impacts. Control decreases and assumption-burden increases as you move rightward.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch2_logic_model.svg' | relative_url }}" alt="A five-stage logic model shown left to right: inputs, activities, outputs, outcomes, impacts, with arrows between each. Inputs, activities, and outputs are bracketed as what the program does; outcomes and impacts as the change it causes.">
+<figcaption><span class="fig-label">Figure 2.1.</span> The five-stage logic-model chain, shown for Moving to Opportunity (Case D). Inputs, activities, and outputs are what the program <em>does</em>; outcomes and impacts are the change it <em>causes</em>. Each arrow is an assumption that can fail, and the distance between the two brackets is exactly what an impact evaluation has to bridge.</figcaption>
+</figure>
+
 ### Assumptions and External Factors
 
 Two elements are easy to omit and dangerous to ignore. *Assumptions* are the beliefs that must hold for one box to lead to the next — for MTO, that families offered a voucher will actually use it (take-up), that low-poverty neighborhoods genuinely offer better schools and safety, and that childhood exposure matters more than the age at which a child moves. *External factors* are forces outside the program that affect outcomes regardless of program activity: the housing market, local labor demand, school-district policies. A good logic model names these in the margins, because they are exactly what an impact evaluation must rule out as alternative explanations.

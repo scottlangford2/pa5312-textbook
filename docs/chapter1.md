@@ -24,6 +24,11 @@ Here is the part that should unsettle every manager. Suppose NSW had *not* been 
 
 The gap between **+\$1,794** and **−\$8,498** is not a rounding error or a modeling quibble. It is the difference between an honest counterfactual and a misleading one — and it is the situation public managers face constantly: a program exists, money is at stake, decisions loom, and the available evidence describes activity, or the wrong comparison, rather than effect.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch1_nsw_signflip.svg' | relative_url }}" alt="Bar chart of the NSW estimated effect on 1978 earnings: a small positive bar for the experimental estimate against randomized controls, and a much larger negative bar for the naive comparison against a survey sample.">
+<figcaption><span class="fig-label">Figure 1.1.</span> The same program, two answers. Measured against the randomized control group, NSW's effect on earnings is a credible positive; measured against a naive survey comparison, the sign flips to a far larger negative. The difference is entirely the comparison group — selection bias, not arithmetic.</figcaption>
+</figure>
+
 **Guiding Questions**
 
 - What is the difference between *what a program did* and *what difference the program made*?

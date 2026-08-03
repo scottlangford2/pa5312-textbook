@@ -119,6 +119,11 @@ Read this honestly: the estimate is positive but *tiny relative to its uncertain
 
 In both cases the central requirement is the same one Card and Krueger relied on Pennsylvania to satisfy: the **parallel-trends assumption**, examined next. And both cases raise a wrinkle the NJ/PA study did not — Texas units adopt in *different years* (staggered adoption), which the simple 2×2 does not handle and which the next section flags as a limit.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch8_did.svg' | relative_url }}" alt="Difference-in-differences line chart: New Jersey employment rose slightly while Pennsylvania fell; the New Jersey counterfactual falls further, so the difference-in-differences is +2.76.">
+<figcaption><span class="fig-label">Figure 8.1.</span> Difference-in-differences, Card &amp; Krueger (1994). Employment did not fall in New Jersey relative to Pennsylvania. The dashed counterfactual applies Pennsylvania's change to New Jersey's starting point; the gap between it and New Jersey's actual value is the difference-in-differences, +2.76.</figcaption>
+</figure>
+
 ## The Parallel-Trends Assumption and Its Limits
 
 DiD does not assume the two groups are identical. It assumes something weaker but crucial: that *in the absence of the program*, the treated and comparison groups would have followed **parallel trends** — their outcomes would have moved up or down together by the same amount. The baseline gap can be any size; what must hold is that the gap would have stayed constant without the intervention.

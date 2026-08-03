@@ -72,6 +72,11 @@ Flagging is the start of an investigation, never an automatic deletion.
 
 > **Briefing:** Outliers are flags, not verdicts. Investigate whether each is an error or a real extreme case before deciding what to do, and disclose the decision.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch5_histogram.svg' | relative_url }}" alt="Histogram of Texas cities by 2024 per-capita sales-tax allocation, right-skewed, with the mean marked to the right of the median.">
+<figcaption><span class="fig-label">Figure 5.1.</span> The 2024 per-capita allocation is right-skewed: most cities are modest, but a long upper tail pulls the mean to the right of the median. For a skewed distribution, the median better describes the typical city.</figcaption>
+</figure>
+
 ## Baseline Comparisons and Equivalence
 
 Here is where description becomes evaluation. When you compare a treatment group to a comparison group, the entire credibility of a later difference depends on whether the two groups were similar *before* the program. A **baseline equivalence table** lays the pre-program characteristics of both groups side by side so a reader can judge for themselves.
@@ -182,6 +187,11 @@ A $$z$$ of 2.32 gives a two-tailed $$p \approx 0.02$$: even with only 123 childr
 **Excel recipe.** There is no ToolPak dialog for two proportions, so build it from the counts. In cells, enter `x1=38`, `n1=58`, `x2=29`, `n2=65`. Then `p1 =B1/B2`, `p2 =B3/B4`, risk difference `=p1-p2`; pooled `pbar =(B1+B3)/(B2+B4)`; standard error `=SQRT(pbar*(1-pbar)*(1/B2+1/B4))`; `z =(p1-p2)/SE`; and the two-tailed p-value `=2*(1-NORM.S.DIST(ABS(z),TRUE))`. A convenient shortcut: because the outcome is coded 0/1, running the **independent-samples t-test** of the previous section on the raw 0/1 column returns almost the same result — proportions are just means of a 0/1 variable.
 
 > **Briefing:** For yes/no outcomes, summarize each group with a proportion, report the **risk difference** in plain percentage points, and test it with a two-proportion z-test. A large gap can be significant even in a very small sample.
+
+<figure class="fig">
+<img src="{{ '/assets/figures/ch5_perry_proportions.svg' | relative_url }}" alt="Grouped bars of Perry Preschool outcomes for the program and no-program groups across high-school graduation, earnings, and arrests.">
+<figcaption><span class="fig-label">Figure 5.2.</span> Perry Preschool outcomes, program versus no-program group. Each outcome is a proportion, compared with a two-proportion test. The 20-percentage-point graduation gap (65 versus 45 percent) is large enough to be statistically significant even with only 123 children.</figcaption>
+</figure>
 
 ## One-Way ANOVA for Three or More Groups
 

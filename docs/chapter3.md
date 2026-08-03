@@ -80,6 +80,11 @@ One term above deserves a name: $$E[Y_i(1) - Y_i(0) \mid D=1]$$ is the average e
 
 > **Briefing:** A naive treated-minus-untreated comparison equals the true effect *plus* selection bias; credible designs are the ones that eliminate or bound that bias term.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch3_counterfactual.svg' | relative_url }}" alt="Average 1978 earnings for the treated group, the randomized control, and the CPS survey sample; the experiment compares the first two, the naive analysis the first and third.">
+<figcaption><span class="fig-label">Figure 3.1.</span> One outcome, three comparison groups. The experiment compares the treated group to the randomized control — a credible stand-in for the counterfactual. The naive analysis instead uses the far-higher CPS survey sample, and the sign of the estimated effect flips. The entire difference is selection bias.</figcaption>
+</figure>
+
 ## Internal and External Validity
 
 Two distinct questions govern a design's credibility. *Internal validity* asks whether the study correctly identifies the causal effect *for the units and setting studied* — is the estimated effect really the program's, free of selection bias and other confounds? The NSW experiment has high internal validity; the CPS comparison does not. *External validity* asks whether that effect *generalizes* — would NSW's +\$1,794 hold for a different population, in a different labor market, at a different program dosage? The two often trade off. NSW's randomized estimate is internally airtight but applies to a specific 1970s population of the severely disadvantaged; the EDC sales-tax panel (Case A) covers all 1,180 Texas cities and speaks to the whole state but is riddled with selection bias, since cities choose whether to levy the tax. An evaluator must be explicit about which kind of validity the decision requires.

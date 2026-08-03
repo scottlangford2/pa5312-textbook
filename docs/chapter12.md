@@ -58,6 +58,11 @@ The five cases also illustrate the different limitations you must name honestly:
 
 Resist three temptations: overstating a marginal result to please a sponsor, hiding a limitation that a critic might exploit, and implying causation that the design cannot support. If the sales-tax or vote-center comparison group is imperfect, say so, and say what it means for the conclusion. A report that names its own weaknesses is far harder to attack than one that pretends to have none.
 
+<figure class="fig">
+<img src="{{ '/assets/figures/ch12_uncertainty.svg' | relative_url }}" alt="Two effect estimates with confidence intervals: Effect A's interval sits entirely above zero; Effect B's interval crosses zero.">
+<figcaption><span class="fig-label">Figure 12.1.</span> Report the estimate with its uncertainty. Effect A's confidence interval lies entirely above zero, so it is distinguishable from no effect; Effect B's crosses zero and is not. A point estimate reported without its interval hides exactly this difference.</figcaption>
+</figure>
+
 ## Data Visualization for Non-Technical Audiences
 
 A figure should make one point, instantly. For a council audience, prefer a clean bar chart of group means over a scatterplot of residuals; show the *effect*, not the machinery. A few durable principles:
