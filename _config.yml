@@ -1,8 +1,8 @@
 title: "Program Evaluation and Administrative Statistical Analysis"
 description: "PA 5312 textbook — Texas State University"
 author: "Dr. W. Scott Langford"
-url: "https://scottlangford2.github.io"
-baseurl: "/pa5312-textbook"
+url: "https://pa5312.scottlangford.com"
+baseurl: ""
 theme: minima
 plugins:
   - jekyll-seo-tag
